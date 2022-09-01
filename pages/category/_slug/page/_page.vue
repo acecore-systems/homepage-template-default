@@ -2,7 +2,7 @@
   <main class="Container">
     <Cover v-if="app && app.cover && app.cover.value" :img="app.cover.value" />
     <div class="Articles">
-      <Dropdown :categories="categories" />
+      <Dropdown :categories="categories" :selected="selected" />
       <div class="Inner">
         <ArticleCard
           v-for="article in articles"
@@ -10,7 +10,11 @@
           :article="article"
         />
       </div>
-      <Pagination :total="total" :current="1" />
+      <Pagination
+        :total="total"
+        :current="pageNumber"
+        :base-path="`/category/${selected}`"
+      />
     </div>
   </main>
 </template>
@@ -20,11 +24,25 @@ import { mapGetters } from 'vuex'
 import { getSiteName } from 'utils/head'
 
 export default {
-  async asyncData({ $config, store }) {
+  async asyncData({ $config, store, redirect, params }) {
     await store.dispatch('fetchApp', $config)
-    await store.dispatch('fetchArticles', $config)
     await store.dispatch('fetchCategories', $config)
-    return {}
+
+    const pageNumber = Number(params.page)
+    if (Number.isNaN(pageNumber)) return redirect(302, '/')
+    const category = store.getters.categories.find(
+      (_category) => _category.slug === params.slug
+    )
+    await store.dispatch('fetchArticles', {
+      ...$config,
+      category: (category && category._id) || '',
+      page: pageNumber,
+    })
+
+    return {
+      selected: params.slug || '',
+      pageNumber,
+    }
   },
   head() {
     return {

@@ -1,69 +1,134 @@
-# hatt-homepage
+<p align="center">
+  <a href="https://www.newt.so/">
+    <img src="https://user-images.githubusercontent.com/3859812/155490725-80ed1f06-996e-407f-8f63-fd54f0acaf14.svg" alt="Newt" width="70" height="57" />
+  </a>
+</p>
+<h3 align="center">
+Newt's starter
+</h3>
+<p align="center">
+  <a href="https://demo-newt-blog-starter-nuxtjs.vercel.app/">Demo</a> | <a href="https://www.newt.so/">Newt</a>
+</p>
 
-## Build Setup
+## 概要
 
-```bash
-# install dependencies
-$ npm install
+**newt-blog-starter-nuxtjs**
+<br />Newtを利用した1カラムのシンプルなブログ
+<br />技術構成： Nuxt.js, JavaScript
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+## 開発をはじめる
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+### Step1: Newtスペースをセットアップ
 
-# generate static project
-$ npm run generate
+1. スペースを作成します
+    - スペースUIDを控えておきましょう。スペースUIDは 管理画面URL（ `https://app.newt.so/{スペースUID}` ） もしくは スペース設定 > 一般 から確認できます。
+2. Appを作成します
+    - Appテンプレートから作成する場合、**Blog**を選択し「このテンプレートを追加」をクリックしてください。
+    - スクラッチで作成する場合は、App名とAppUIDを設定して次のステップに進みます。
+    - AppUIDを控えておきましょう。AppUIDは管理画面URL（ `https://app.newt.so/{スペースUID}/app/{AppUID}` ） または App設定 > 一般 から確認できます。
+3. App設定から、Articleモデル, Categoryモデル, Authorモデルを作成します
+    - Appテンプレートから作成した場合、すでにモデルが作成されているためこのステップは飛ばします
+    - スクラッチで作成した場合は、[Newtスペースの構成](#Newtスペースの構成)に従ってAppとモデルを作成します
+4. スペース設定 > APIキー からCDN APIトークンを作成します
+    - スペース設定 > APIキー よりCDN APIトークンを作成します
+    - 複製マークをクリックしてトークンをコピーしましょう
+
+### Step2: nuxt.config.jsを書き換える
+
+1. Step1で取得したスペースUID, AppUID, CDN APIトークンでnuxt.config.jsのpublicRuntimeConfigを書き換えます
+
+```javascript
+export default {
+  // ...省略
+  publicRuntimeConfig: {
+    spaceUid: 'スペースUID',
+    appUid: 'AppUID',
+    token: 'CDN APIトークン',
+    apiType: 'cdn',
+    articleModelUid: 'article',
+    categoryModelUid: 'category',
+    pageLimit: 12,
+  },
+}
 ```
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+### Step3: devサーバーを起動する
 
-## Special Directories
+Yarnを使う
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+```bash
+# 依存パッケージをインストール
+$ yarn install
 
-### `assets`
+# localhost:3000でdevサーバーを起動
+$ yarn dev
+```
 
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
+NPMを使う
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
+```bash
+# 依存パッケージをインストール
+$ npm install
 
-### `components`
+# localhost:3000でdevサーバーを起動
+$ npm run dev
+```
 
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
+### Step4: Staticなサイトを生成して起動
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
+```bash
+# Staticなサイトを生成（SSG）
+$ yarn generate
 
-### `layouts`
+# サーバーを起動
+$ yarn start
+```
 
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
+## Newtスペースの構成
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
+`Blog` appの中にArticle, Category, Authorの3つのモデルを作ります。
 
+| App名（任意） | モデル名（モデルUID） |
+| --- | --- |
+| Blog | Article (`article`) |
+|  | Category (`category`) |
+|  | Author (`author`) |
 
-### `pages`
+### Article（`uid: article`）モデル
 
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
+| フィールドID | フィールド名 | フィールドタイプ | オプション |
+| --- | --- | --- | --- |
+| title | タイトル | テキスト | 必須フィールド, このフィールドをタイトルに使う |
+| slug | スラッグ | テキスト | 必須フィールド |
+| meta | メタ情報 | カスタムフィールド | |
+| coverImage | カバー画像 | 画像 |  |
+| body | 本文 | Markdown or リッチテキスト |  |
+| category | カテゴリ | 参照（Categoryモデル） | 複数値 |
+| author | 著者 | 参照（Authorモデル） |  |
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
+### Category（`uid: category`）モデル
 
-### `plugins`
+| フィールドID | フィールド名 | フィールドタイプ | オプション |
+| --- | --- | --- | --- |
+| name | 名前 | テキスト | 必須フィールド, このフィールドをタイトルに使う |
+| slug | スラッグ | テキスト | 必須フィールド |
 
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
+### Author（`uid: author`）モデル
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
+| フィールドID | フィールド名 | フィールドタイプ | オプション |
+| --- | --- | --- | --- |
+| fullName | 名前 | テキスト | 必須フィールド, このフィールドをタイトルに使う |
+| profileImage | プロフィール画像 | 画像 |  |
+| biography | 自己紹介 | Markdown or リッチテキスト |  |
 
-### `static`
+### メタ情報（`id: META`）カスタムフィールドタイプ
 
-This directory contains your static files. Each file inside this directory is mapped to `/`.
+| フィールドID | フィールド名 | フィールドタイプ | オプション |
+| --- | --- | --- | --- |
+| title | Title | テキスト | |
+| description | Description | テキスト | |
+| ogImage | OG画像 | 画像 |  |
 
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
+## License
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+[MIT License](https://github.com/Newt-Inc/newt-blog-starter-nuxtjs/blob/main/LICENSE)

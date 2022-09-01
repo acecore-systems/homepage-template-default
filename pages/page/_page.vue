@@ -10,7 +10,7 @@
           :article="article"
         />
       </div>
-      <Pagination :total="total" :current="1" />
+      <Pagination :total="total" :current="pageNumber" />
     </div>
   </main>
 </template>
@@ -20,11 +20,20 @@ import { mapGetters } from 'vuex'
 import { getSiteName } from 'utils/head'
 
 export default {
-  async asyncData({ $config, store }) {
+  async asyncData({ $config, store, redirect, params }) {
     await store.dispatch('fetchApp', $config)
-    await store.dispatch('fetchArticles', $config)
     await store.dispatch('fetchCategories', $config)
-    return {}
+
+    const pageNumber = Number(params.page)
+    if (Number.isNaN(pageNumber)) return redirect(302, '/')
+    await store.dispatch('fetchArticles', {
+      ...$config,
+      page: pageNumber,
+    })
+
+    return {
+      pageNumber,
+    }
   },
   head() {
     return {
