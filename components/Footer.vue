@@ -15,14 +15,6 @@
         </span>
         <div class="SiteName_Text">{{ title }}</div>
       </NuxtLink>
-      <div class="Link">
-        <a
-          href="https://github.com/Newt-Inc/newt-blog-starter-nuxtjs"
-          rel="noreferrer noopener"
-          target="_blank"
-          >GitHub</a
-        >
-      </div>
     </div>
   </footer>
 </template>

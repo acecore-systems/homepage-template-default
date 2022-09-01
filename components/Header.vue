@@ -15,14 +15,6 @@
         </span>
         <div class="Title_Text">{{ title }}</div>
       </NuxtLink>
-      <div class="Link">
-        <a
-          href="https://github.com/Newt-Inc/newt-blog-starter-nuxtjs"
-          rel="noreferrer noopener"
-          target="_blank"
-          >GitHub</a
-        >
-      </div>
       <div class="Search">
         <button type="button" class="Search_Button" @click="focusInput">
           <svg width="14" height="14" xmlns="http://www.w3.org/2000/svg">
