@@ -3,75 +3,10 @@
     <article v-if="currentArticle" class="Article">
       <div class="Article_Header">
         <h1 class="Article_Title">{{ currentArticle.title }}</h1>
-        <div class="Article_Data">
-          <div class="Article_Avatar">
-            <template
-              v-if="currentArticle.author && currentArticle.author.profileImage"
-            >
-              <img
-                :src="currentArticle.author.profileImage.src"
-                alt=""
-                width="32"
-                height="32"
-              />
-            </template>
-            <template v-else>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20px"
-                height="20px"
-                viewBox="0 0 24 24"
-                fill="#CCCCCC"
-              >
-                <path d="M0 0h24v24H0V0z" fill="none" />
-                <path
-                  d="M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 10c2.7 0 5.8 1.29 6 2H6c.23-.72 3.31-2 6-2m0-12C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-                />
-              </svg>
-            </template>
-          </div>
-          <div class="Article_AuthorName">{{ authorName }}</div>
-          <time :datetime="publishDateForAttr" class="Article_Date">{{
-            publishDate
-          }}</time>
-        </div>
+        <time :datetime="publishDateForAttr" class="Article_Date">{{publishDate}}</time>
       </div>
       <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="Article_Body" v-html="currentArticle.body"></div>
-      <aside class="Author">
-        <div class="Author_Avatar">
-          <template
-            v-if="currentArticle.author && currentArticle.author.profileImage"
-          >
-            <img
-              :src="currentArticle.author.profileImage.src"
-              alt=""
-              width="48"
-              height="48"
-            />
-          </template>
-          <template v-else>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="28px"
-              height="28px"
-              viewBox="0 0 24 24"
-              fill="#CCCCCC"
-            >
-              <path d="M0 0h24v24H0V0z" fill="none" />
-              <path
-                d="M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 10c2.7 0 5.8 1.29 6 2H6c.23-.72 3.31-2 6-2m0-12C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-              />
-            </svg>
-          </template>
-        </div>
-        <div class="Author_Text">
-          <div class="Author_Name">{{ authorName }}</div>
-          <!-- eslint-disable vue/no-v-html -->
-          <div class="Author_Description" v-html="authorBio"></div>
-          <!-- eslint-enable vue/no-v-html -->
-        </div>
-      </aside>
     </article>
   </main>
 </template>
@@ -203,32 +138,7 @@ export default {
   margin: 0 0 16px 0;
   padding: 0;
 }
-.Article_Data {
-  display: flex;
-  align-items: center;
-}
-.Article_Avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 16px;
-  overflow: hidden;
-  margin: 0 12px 0 0;
-  flex-shrink: 0;
-  background: rgba(0, 0, 0, 0.05);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.Article_Avatar img {
-  width: 32px;
-  height: 32px;
-  object-fit: cover;
-  font-family: 'object-fit: cover'; /* IE11 */
-}
-.Article_AuthorName {
-  font-weight: bold;
-  margin: 0 8px 0 0;
-}
+
 .Article_Date {
   color: #888;
 }
@@ -384,47 +294,7 @@ export default {
 .Fav._on > em {
   color: #e0245e;
 }
-.Author {
-  border: 1px solid #e5e5e5;
-  border-radius: 4px;
-  padding: 24px;
-  display: flex;
-  margin: 0 0 40px 0;
-}
-.Author_Avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 24px;
-  overflow: hidden;
-  margin: 0 16px 0 0;
-  flex-shrink: 0;
-  background: rgba(0, 0, 0, 0.05);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.Author_Avatar img {
-  width: 48px;
-  height: 48px;
-  object-fit: cover;
-  font-family: 'object-fit: cover'; /* IE11 */
-}
-.Author_Name {
-  margin: 0 0 4px 0;
-  padding: 0;
-  font-weight: bold;
-  line-height: 1.5;
-}
-.Author_Description {
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
-  font-size: 1.2rem;
-}
-.Author_Description >>> p {
-  margin: 0;
-  padding: 0;
-}
+
 @media (min-width: 600px) {
   .Article {
     max-width: 700px;

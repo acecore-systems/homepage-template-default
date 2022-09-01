@@ -13,22 +13,7 @@
       </div>
       <div class="Article_Inner">
         <h2 class="Article_Title">{{article.title}}</h2>
-        <div class="Article_Content">
-          <div class="Article_Data">
-            <div class="Article_Avatar">
-              <template v-if="article.author && article.author.profileImage">
-                <img :src="article.author.profileImage.src" alt="" width="32" height="32" />
-              </template>
-              <template v-else>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="#CCCCCC"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 10c2.7 0 5.8 1.29 6 2H6c.23-.72 3.31-2 6-2m0-12C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-              </template>
-            </div>
-            <div class="Article_DataText">
-              <div class="Article_AuthorName">{{authorName}}</div>
-              <time :datetime="formatDate(article._sys.createdAt).replace(/\//gm, '-')" class="Article_Date">{{formatDate(article._sys.createdAt)}}</time>
-            </div>
-          </div>
-        </div>
+        <time :datetime="formatDate(article._sys.createdAt).replace(/\//gm, '-')" class="Article_Date">{{formatDate(article._sys.createdAt)}}</time>
       </div>
     </NuxtLink>
   </article>
@@ -135,37 +120,6 @@ export default {
   font-size: 1.4rem;
   margin: 0 0 12px 0;
   padding: 0;
-}
-.Article_Content {
-  margin: auto 0 0 0;
-  display: flex;
-  align-items: center;
-}
-.Article_Data {
-  display: flex;
-  align-items: center;
-}
-.Article_Avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 16px;
-  overflow: hidden;
-  margin: 0 12px 0 0;
-  flex-shrink: 0;
-  background: rgba(0,0,0,0.05);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.Article_Avatar img {
-  width: 32px;
-  height: 32px;
-  object-fit: cover;
-  font-family: 'object-fit: cover'; /* IE11 */
-}
-.Article_AuthorName {
-  font-size: 1.2rem;
-  font-weight: bold;
 }
 .Article_Date {
   font-size: 1.2rem;
