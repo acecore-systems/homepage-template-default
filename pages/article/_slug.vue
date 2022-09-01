@@ -14,7 +14,6 @@
 <script>
 import { mapGetters } from 'vuex'
 import { formatDate } from 'utils/date'
-import { htmlToText } from 'html-to-text'
 
 export default {
   async asyncData({ $config, store, params }) {
@@ -70,28 +69,14 @@ export default {
       return null
     },
     title() {
-      if (this.meta && this.meta.title) {
-        return this.meta.title
-      }
       if (this.currentArticle && this.currentArticle.title) {
         return this.currentArticle.title
       }
       return this.app && (this.app.name || this.app.uid || 'Blog')
     },
     description() {
-      if (this.meta && this.meta.description) {
-        return this.meta.description
-      }
-      if (this.currentArticle && this.currentArticle.body) {
-        return htmlToText(this.currentArticle.body, {
-          selectors: [{ selector: 'img', format: 'skip' }],
-        }).slice(0, 200)
-      }
-      return ''
-    },
-    ogImage() {
-      if (this.meta && this.meta.ogImage) {
-        return this.meta.ogImage.src
+      if (this.currentArticle && this.currentArticle.description) {
+        return this.currentArticle.description
       }
       return ''
     },
