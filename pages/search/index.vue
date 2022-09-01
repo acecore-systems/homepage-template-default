@@ -1,7 +1,7 @@
 <template>
   <main class="Container">
     <div v-if="articles.length > 0" class="Search">
-      <p class="Search_Text">Found {{ total }} results for your search</p>
+      <p class="Search_Text">記事が{{ total }}ページ見つかりました</p>
       <div class="Search_Results">
         <article v-for="article in articles" :key="article._id" class="Article">
           <NuxtLink :to="`/article/${article.slug}`" class="Article_Link">
@@ -16,10 +16,9 @@
     </div>
     <div v-else-if="isLoading === false" class="Empty">
       <div class="Empty_Emoji">😵</div>
-      <h1 class="Empty_Title">Nothing found</h1>
+      <h1 class="Empty_Title">記事が見つかりませんでした。</h1>
       <p class="Empty_Description">
-        Sorry, but nothing matched search terms…<br />Please try again with
-        different keywords!
+        申し訳ありませんが、検索用語に一致するものはありませんでした...<br />別のキーワードで、もう一度お試しください
       </p>
     </div>
   </main>

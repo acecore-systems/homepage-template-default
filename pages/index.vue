@@ -1,6 +1,7 @@
 <template>
   <main class="Container">
     <Cover v-if="app && app.cover && app.cover.value" :img="app.cover.value" />
+    
     <div class="Articles">
       <Dropdown :categories="categories" />
       <div class="Inner">

@@ -2,8 +2,8 @@
   <article v-if="article" class="Article">
     <NuxtLink :to="`/article/${article.slug}`" class="Article_Link">
       <div class="Article_Eyecatch">
-        <template v-if="article.coverImage">
-          <img :src="article.coverImage.src" alt="" />
+        <template v-if="article.thumbnail">
+          <img :src="article.thumbnail.src" alt="" />
         </template>
         <template v-else>
           <div class="Article_EyecatchEmpty">
