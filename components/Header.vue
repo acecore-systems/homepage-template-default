@@ -32,7 +32,7 @@
               v-model="searchText"
               name="q"
               type="search"
-              placeholder="Search"
+              placeholder="サイト内検索"
             />
           </div>
         </form>
