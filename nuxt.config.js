@@ -6,6 +6,7 @@ export default {
     appUid: 'blog',
     token: 'cXUCzvWcO8gjxcRtaJksEukjmZTPDyKWXAZgBLfzBoI',
     apiType: 'cdn',
+    pageModelUid: 'each-page',
     articleModelUid: 'article',
     categoryModelUid: 'category',
     pageLimit: 12,
