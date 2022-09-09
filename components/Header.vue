@@ -15,14 +15,6 @@
         </span>
         <div class="Title_Text">{{ title }}</div>
       </NuxtLink>
-      <div class="Link">
-        <a
-          href="https://github.com/Newt-Inc/newt-landing-page-starter-nuxtjs"
-          rel="noreferrer noopener"
-          target="_blank"
-          >GitHub</a
-        >
-      </div>
     </div>
   </header>
 </template>
@@ -127,14 +119,5 @@ export default {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-.Link > a {
-  color: #888;
-  text-decoration: none;
-  transition: color 0.2s;
-  padding: 3px 12px;
-}
-.Link > a:hover {
-  color: #333;
 }
 </style>

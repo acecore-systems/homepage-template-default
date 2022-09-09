@@ -15,14 +15,6 @@
         </span>
         <div class="SiteName_Text">{{ title }}</div>
       </NuxtLink>
-      <div class="Link">
-        <a
-          href="https://github.com/Newt-Inc/newt-landing-starter-nuxtjs"
-          rel="noreferrer noopener"
-          target="_blank"
-          >GitHub</a
-        >
-      </div>
     </div>
   </footer>
 </template>
@@ -93,19 +85,5 @@ export default {
 }
 .SiteName_Text {
   font-size: 1.4rem;
-}
-.Link {
-  border-left: 1px solid #e5e5e5;
-  padding: 0 0 0 16px;
-  margin: 0 0 0 16px;
-  line-height: 1.5;
-}
-.Link > a {
-  color: #333;
-  text-decoration: none;
-}
-.Link > a:hover {
-  color: #333;
-  text-decoration: underline;
 }
 </style>

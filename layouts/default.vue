@@ -3,7 +3,6 @@
     <Header :app="app" />
     <Nuxt />
     <Footer :app="app" />
-    <Badge />
   </div>
 </template>
 
