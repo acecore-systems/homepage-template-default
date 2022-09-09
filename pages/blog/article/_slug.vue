@@ -53,7 +53,7 @@
             </div>
           </div>
           <div class="Article_Share">
-            <p class="Article_ShareLabel">Share this post</p>
+            <p class="Article_ShareLabel">この記事を共有</p>
             <ul class="Article_ShareList">
               <li>
                 <button type="button" @click="shareOnTwitter">
@@ -92,7 +92,7 @@
       <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="Article_Body" v-html="currentArticle.body"></div>
       <div class="SnsShare">
-        <p class="SnsShare_Label">Share this post</p>
+        <p class="SnsShare_Label">この記事を共有</p>
         <ul class="SnsShare_List">
           <li>
             <button type="button" @click="shareOnTwitter">
@@ -182,7 +182,7 @@
               d="M17.51 3.87L15.73 2.1 5.84 12l9.9 9.9 1.77-1.77L9.38 12l8.13-8.13z"
             />
           </svg>
-          Previous post
+          前の記事
         </NuxtLink>
         <NuxtLink
           v-if="nextArticle"
@@ -190,7 +190,7 @@
           href="#"
           class="Links_Next"
         >
-          Next post
+          次の記事
           <svg
             xmlns="http://www.w3.org/2000/svg"
             enable-background="new 0 0 24 24"

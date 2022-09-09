@@ -5,7 +5,7 @@
       <div class="Container_Inner">
         <main class="Articles">
           <div class="Articles_Inner">
-            <h2 class="Articles_Heading">Recent Articles</h2>
+            <h2 class="Articles_Heading">最新の記事</h2>
             <ArticleCard
               v-for="article in articles"
               :key="article._id"
