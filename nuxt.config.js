@@ -3,12 +3,12 @@ import { resolve } from 'path'
 export default {
   publicRuntimeConfig: {
     spaceUid: 'hatt',
-    appUid: 'blog',
+    appUid: 'homepage',
     token: 'cXUCzvWcO8gjxcRtaJksEukjmZTPDyKWXAZgBLfzBoI',
     apiType: 'cdn',
-    pageModelUid: 'each-page',
+    pageModelUid: 'single-page',
     articleModelUid: 'article',
-    categoryModelUid: 'category',
+    tagModelUid: 'tag',
     pageLimit: 12,
   },
 
