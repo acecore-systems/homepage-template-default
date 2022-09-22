@@ -1,20 +1,18 @@
 <template>
   <div>
     <Cover v-if="app && app.cover && app.cover.value" :img="app.cover.value" />
-    <div class="Container">
-      <div class="Container_Inner">
-        <main class="Articles">
-          <div class="Articles_Inner">
-            <h2 class="Articles_Heading">最新の記事</h2>
-            <ArticleCard
-              v-for="article in articles"
-              :key="article._id"
-              :article="article"
-            />
-          </div>
+    <div class="container">
+      <div class="row mt-5">
+        <main class="col-8">
+          <h2 class="mb-4">最新の記事</h2>
+          <ArticleCard
+            v-for="article in articles"
+            :key="article._id"
+            :article="article"
+          />
           <Pagination :total="total" :current="1" />
         </main>
-        <Side :tags="popularTags" :authors="authors" :archives="archives" />
+        <Side :tags="popularTags" :authors="authors" :archives="archives" class="col-4"/>
       </div>
     </div>
   </div>
@@ -50,40 +48,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.Container {
-  padding: 40px 24px;
-}
-.Container_Inner {
-  display: block;
-  margin: 0 auto;
-}
-@media (min-width: 600px) {
-  .Container {
-    padding: 60px;
-  }
-  .Container_Inner {
-    max-width: 980px;
-  }
-}
-@media (min-width: 960px) {
-  .Container_Inner {
-    display: flex;
-  }
-}
-.Articles {
-  flex: 1;
-}
-.Articles_Heading {
-  font-size: 2rem;
-  margin: 0 0 42px;
-  padding: 0;
-  line-height: 1.4;
-}
-@media (min-width: 960px) {
-  .Articles {
-    margin: 0 40px 0 0;
-  }
-}
-</style>

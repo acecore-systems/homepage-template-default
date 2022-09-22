@@ -1,101 +1,56 @@
 <template>
-  <main class="Container">
-    <article v-if="currentArticle" class="Article">
-      <div class="Article_Cover">
-        <img :src="currentArticle.coverImage.src" alt="" />
-      </div>
-      <div class="Article_Header">
-        <h1 class="Article_Title">{{ currentArticle.title }}</h1>
-        <ul class="Article_Tags">
-          <li v-for="tag in currentArticle.tags" :key="tag._id">
-            <NuxtLink :to="`/blog/tag/${tag.slug}`">#{{ tag.name }}</NuxtLink>
-          </li>
-        </ul>
-        <div class="Article_Row">
-          <div class="Article_Author">
-            <a href="#" class="Article_Avatar">
-              <template
-                v-if="
-                  currentArticle.author && currentArticle.author.profileImage
-                "
-              >
-                <img
-                  :src="currentArticle.author.profileImage.src"
-                  alt=""
-                  width="32"
-                  height="32"
-                />
-              </template>
-              <template v-else>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20px"
-                  height="20px"
-                  viewBox="0 0 24 24"
-                  fill="#CCCCCC"
-                >
-                  <path d="M0 0h24v24H0V0z" fill="none" />
-                  <path
-                    d="M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 10c2.7 0 5.8 1.29 6 2H6c.23-.72 3.31-2 6-2m0-12C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-                  />
-                </svg>
-              </template>
-            </a>
-            <div class="Article_AuthorData">
-              <NuxtLink
-                :to="`/blog/author/${currentArticle.author.slug}`"
-                class="Article_AuthorName"
-                >{{ authorName }}</NuxtLink
-              >
-              <time :datetime="publishDateForAttr" class="Article_Date">{{
-                publishDate
-              }}</time>
-            </div>
-          </div>
-          <div class="Article_Share">
-            <p class="Article_ShareLabel">この記事を共有</p>
-            <ul class="Article_ShareList">
-              <li>
-                <button type="button" @click="shareOnTwitter">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24px"
-                    viewBox="0 0 24 24"
-                    width="24px"
-                    fill="#cccccc"
-                  >
-                    <path
-                      d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
-                    />
-                  </svg>
-                </button>
-              </li>
-              <li>
-                <button type="button" @click="shareOnFacebook">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24px"
-                    viewBox="0 0 24 24"
-                    width="24px"
-                    fill="#cccccc"
-                  >
-                    <path
-                      d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"
-                    />
-                  </svg>
-                </button>
-              </li>
-            </ul>
-          </div>
+  <main class="container">
+    <article v-if="currentArticle">
+      <img :src="currentArticle.coverImage.src" alt="" class="w-100 mb-5"/>
+      <h1 class="mb-3">{{ currentArticle.title }}</h1>
+      <ul class="mb-3">
+        <li v-for="tag in currentArticle.tags" :key="tag._id">
+          <NuxtLink :to="`/blog/tag/${tag.slug}`">#{{ tag.name }}</NuxtLink>
+        </li>
+      </ul>
+      <div class="row mb-5 d-flex align-items-center">
+        <a href="#" class="col-2">
+          <template
+            v-if="
+              currentArticle.author && currentArticle.author.profileImage
+            "
+          >
+            <img
+              :src="currentArticle.author.profileImage.src"
+              alt=""
+              width="32"
+              height="32"
+            />
+          </template>
+          <template v-else>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20px"
+              height="20px"
+              viewBox="0 0 24 24"
+              fill="#CCCCCC"
+            >
+              <path d="M0 0h24v24H0V0z" fill="none" />
+              <path
+                d="M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 10c2.7 0 5.8 1.29 6 2H6c.23-.72 3.31-2 6-2m0-12C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+              />
+            </svg>
+          </template>
+        </a>
+        <div class="col-6">
+          <NuxtLink
+            :to="`/blog/author/${currentArticle.author.slug}`"
+            class="Article_AuthorName"
+            >{{ authorName }}</NuxtLink
+          >
+          <time :datetime="publishDateForAttr" class="Article_Date">{{
+            publishDate
+          }}</time>
         </div>
-      </div>
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <div class="Article_Body" v-html="currentArticle.body"></div>
-      <div class="SnsShare">
-        <p class="SnsShare_Label">この記事を共有</p>
-        <ul class="SnsShare_List">
-          <li>
-            <button type="button" @click="shareOnTwitter">
+        <div class="col-4">
+          <div class="row d-flex align-items-center">
+            <div class="text-muted">この記事を共有</div>
+            <button type="button" @click="shareOnTwitter" class="btn">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="24px"
@@ -108,9 +63,7 @@
                 />
               </svg>
             </button>
-          </li>
-          <li>
-            <button type="button" @click="shareOnFacebook">
+            <button type="button" @click="shareOnFacebook" class="btn">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="24px"
@@ -123,52 +76,96 @@
                 />
               </svg>
             </button>
-          </li>
-        </ul>
-      </div>
-      <aside class="Author">
-        <a href="#" class="Author_Avatar">
-          <template
-            v-if="currentArticle.author && currentArticle.author.profileImage"
-          >
-            <img
-              :src="currentArticle.author.profileImage.src"
-              alt=""
-              width="48"
-              height="48"
-            />
-          </template>
-          <template v-else>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="28px"
-              height="28px"
-              viewBox="0 0 24 24"
-              fill="#CCCCCC"
-            >
-              <path d="M0 0h24v24H0V0z" fill="none" />
-              <path
-                d="M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 10c2.7 0 5.8 1.29 6 2H6c.23-.72 3.31-2 6-2m0-12C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-              />
-            </svg>
-          </template>
-        </a>
-        <div class="Author_Text">
-          <NuxtLink
-            :to="`/blog/author/${currentArticle.author.slug}`"
-            class="Article_AuthorName"
-            >{{ authorName }}</NuxtLink
-          >
-          <!-- eslint-disable vue/no-v-html -->
-          <div class="Author_Description" v-html="authorBio"></div>
-          <!-- eslint-enable vue/no-v-html -->
+          </div>
         </div>
-      </aside>
-      <nav class="Links">
+      </div>
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <div class="mb-5" v-html="currentArticle.body"></div>
+
+      <div class="row border-top pt-4 mb-4">
+        <div class="row d-flex align-items-center">
+            <div class="col text-muted">この記事を共有</div>
+            <button type="col button" @click="shareOnTwitter" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 0 24 24"
+                width="24px"
+                fill="#cccccc"
+              >
+                <path
+                  d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
+                />
+              </svg>
+            </button>
+            <button type="col button" @click="shareOnFacebook" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 0 24 24"
+                width="24px"
+                fill="#cccccc"
+              >
+                <path
+                  d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"
+                />
+              </svg>
+            </button>
+          </div>
+      </div>
+
+
+      <NuxtLink
+          :to="`/blog/author/${currentArticle.author.slug}`"
+          class="card mb-5"
+          >
+        <div class="row d-flex align-items-center">
+          <div class="col-2 text-center">
+            <template
+              v-if="currentArticle.author && currentArticle.author.profileImage"
+            >
+              <img
+                :src="currentArticle.author.profileImage.src"
+                alt=""
+                width="48"
+                height="48"
+              />
+            </template>
+            <template v-else>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="28px"
+                height="28px"
+                viewBox="0 0 24 24"
+                fill="#CCCCCC"
+              >
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path
+                  d="M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 10c2.7 0 5.8 1.29 6 2H6c.23-.72 3.31-2 6-2m0-12C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                />
+              </svg>
+            </template>
+          </div>
+          <div class="col-10">
+            <div class="card-body">
+              <div class="card-title">
+                {{ authorName }}
+              </div>
+              <div class="card-text">
+                <!-- eslint-disable vue/no-v-html -->
+                <div class="Author_Description" v-html="authorBio"></div>
+                <!-- eslint-enable vue/no-v-html -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </NuxtLink>
+
+      <nav class="pb-5 mb-3 w-100">
         <NuxtLink
           v-if="previousArticle"
           :to="`/blog/article/${previousArticle.slug}`"
-          class="Links_Previous"
+          class="float-left"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -188,7 +185,7 @@
           v-if="nextArticle"
           :to="`/blog/article/${nextArticle.slug}`"
           href="#"
-          class="Links_Next"
+          class="float-right"
         >
           次の記事
           <svg
@@ -358,394 +355,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.Article {
-  padding: 24px;
-  margin: 0 auto;
-}
-.Article_Cover {
-  width: 100%;
-  height: 0;
-  padding: 52.5% 0 0;
-  position: relative;
-  border-radius: 4px;
-  overflow: hidden;
-  flex-shrink: 0;
-  margin: 0 0 16px;
-}
-.Article_Cover img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-.Article_Header {
-  margin: 0 0 60px 0;
-}
-.Article_Title {
-  font-size: 2.4rem;
-  line-height: 1.5;
-  font-weight: bold;
-  margin: 0 0 16px 0;
-  padding: 0;
-}
-.Article_Tags {
-  margin: 0 0 16px 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.Article_Tags li {
-  margin: 0 8px 8px 0;
-  padding: 0;
-  list-style: none;
-  font-size: 1.4rem;
-}
-.Article_Tags li a {
-  color: #333;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  text-decoration: none;
-  display: inline-block;
-  padding: 0 8px;
-  transition: border 0.2s;
-}
-.Article_Tags li a:hover {
-  border: 1px solid #999;
-}
-.Article_Row {
-  display: flex;
-  align-items: center;
-}
-.Article_Author {
-  display: flex;
-  align-items: center;
-}
-.Article_Avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 18px;
-  overflow: hidden;
-  margin: 0 12px 0 0;
-  flex-shrink: 0;
-  background: rgba(0, 0, 0, 0.05);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.Article_Avatar img {
-  width: 36px;
-  height: 36px;
-  object-fit: cover;
-  font-family: 'object-fit: cover'; /* IE11 */
-}
-.Article_AuthorData {
-  flex: 1;
-}
-.Article_AuthorName {
-  font-weight: bold;
-  display: block;
-  line-height: 1.5;
-  color: #333;
-  text-decoration: none;
-  font-size: 1.4rem;
-}
-.Article_AuthorName:hover {
-  text-decoration: underline;
-}
-.Article_Date {
-  color: #888;
-  font-size: 1.4rem;
-  line-height: 1.5;
-  display: block;
-}
-.Article_Share {
-  display: flex;
-  align-items: center;
-  padding: 0;
-  margin: 0 0 0 auto;
-}
-.Article_ShareLabel {
-  color: #888;
-  font-size: 1.2rem;
-  margin: 0 2px 0 0;
-  line-height: 1;
-}
-.Article_ShareList {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
-.Article_ShareList > li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.Article_ShareList > li > button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 0 0 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-.Article_ShareList > li > button > svg {
-  width: 20px;
-  height: 20px;
-  transition: fill 0.2s;
-}
-.Article_ShareList > li > button:hover > svg {
-  fill: #888;
-}
-.Article_Body {
-  padding: 0 0 48px 0;
-  margin: 0 0 28px 0;
-  border-bottom: 1px solid #e5e5e5;
-}
-.Article_Body >>> h1,
-.Article_Body >>> h2,
-.Article_Body >>> h3,
-.Article_Body >>> h4,
-.Article_Body >>> h5,
-.Article_Body >>> h6 {
-  padding: 0;
-  margin: 40px 0 24px 0;
-  line-height: 1.4;
-}
-.Article_Body >>> h1 {
-  font-size: 2.4rem;
-}
-.Article_Body >>> h2 {
-  font-size: 2.2rem;
-}
-.Article_Body >>> h3 {
-  font-size: 2rem;
-}
-.Article_Body >>> h4 {
-  font-size: 1.8rem;
-}
-.Article_Body >>> h5 {
-  font-size: 1.6rem;
-}
-.Article_Body >>> h6 {
-  font-size: 1.4rem;
-}
-.Article_Body >>> p {
-  margin: 0 0 24px 0;
-}
-.Article_Body >>> img {
-  max-width: 100%;
-  height: auto;
-  margin: 32px auto;
-  display: block;
-}
-.Article_Body >>> ul,
-.Article_Body >>> ol {
-  margin: 0;
-  padding: 0 0 16px 40px;
-}
-.Article_Body >>> ul li,
-.Article_Body >>> ol li {
-  margin: 0 0 4px 0;
-  padding: 0;
-}
-.Article_Body >>> ul li ul,
-.Article_Body >>> ul li ol,
-.Article_Body >>> ol li ol,
-.Article_Body >>> ol li ul {
-  padding: 0 0 0 20px;
-}
-.Article_Body >>> blockquote {
-  border-left: 4px solid #ccc;
-  padding: 0 0 0 40px;
-  margin: 0 0 20px 0;
-}
-.Article_Body >>> pre {
-  background: #333;
-  color: #fff;
-  border-radius: 4px;
-  padding: 16px 20px;
-  margin: 0 0 20px 0;
-  font-size: 1.4rem;
-  line-height: 1.6;
-  overflow: auto;
-  font-family: 'Segoe UI Emoji', 'Helvetica Neue', Arial,
-    'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-}
-.Article_Body >>> code {
-  border: 1px solid #ddd;
-  background: #f8f8f8;
-  border-radius: 4px;
-  padding: 2px 4px;
-  margin: 0 4px;
-  color: #e01d5a;
-  font-size: 1.4rem;
-  font-family: 'Segoe UI Emoji', 'Helvetica Neue', Arial,
-    'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-}
-.Article_Body >>> pre code {
-  border: none;
-  background: none;
-  border-radius: 0;
-  padding: 0;
-  margin: 0;
-  color: #fff;
-}
-@media (min-width: 600px) {
-  .Article {
-    max-width: 700px;
-    padding: 60px;
-  }
-  .Article_Cover {
-    margin: 0 0 28px;
-  }
-  .Article_ShareLabel {
-    margin: 0 4px 0 0;
-  }
-  .Article_ShareList > li > button > svg {
-    width: 24px;
-    height: 24px;
-  }
-  .Article_ShareList > li > button {
-    padding: 0 0 0 10px;
-  }
-}
-.SnsShare {
-  display: flex;
-  align-items: center;
-  padding: 0 0 48px 0;
-}
-.SnsShare_Label {
-  color: #888;
-  font-size: 1.4rem;
-  margin: 0 16px 0 0;
-}
-.SnsShare_List {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
-.SnsShare_List > li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.SnsShare_List > li > button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 8px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-.SnsShare_List > li > button > svg {
-  width: 28px;
-  height: 28px;
-  transition: fill 0.2s;
-}
-.SnsShare_List > li > button:hover > svg {
-  fill: #888;
-}
-.Author {
-  border: 1px solid #e5e5e5;
-  border-radius: 4px;
-  padding: 24px;
-  display: flex;
-  align-items: center;
-  margin: 0 0 48px 0;
-}
-.Author_Avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 24px;
-  overflow: hidden;
-  margin: 0 16px 0 0;
-  flex-shrink: 0;
-  background: rgba(0, 0, 0, 0.05);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.Author_Avatar img {
-  width: 48px;
-  height: 48px;
-  object-fit: cover;
-  font-family: 'object-fit: cover'; /* IE11 */
-}
-.Author_Name {
-  margin: 0 0 4px 0;
-  padding: 0;
-  font-weight: bold;
-  line-height: 1.5;
-  font-size: 1.6rem;
-  color: #333;
-  text-decoration: none;
-}
-.Author_Name:hover {
-  text-decoration: underline;
-}
-.Author_Description {
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
-  font-size: 1.2rem;
-}
-.Author_Description >>> p {
-  margin: 0;
-  padding: 0;
-}
-.Links {
-  display: flex;
-  position: relative;
-  margin: 0 0 40px 0;
-}
-.Links::after {
-  position: absolute;
-  width: 1px;
-  height: 100%;
-  background: #e5e5e5;
-  left: 50%;
-  content: '';
-}
-.Links_Previous,
-.Links_Next {
-  width: 45%;
-  display: flex;
-  align-items: center;
-  color: #333;
-  text-decoration: none;
-  font-size: 1.4rem;
-  line-height: 1.6;
-}
-.Links_Previous:hover,
-.Links_Next:hover {
-  text-decoration: underline;
-}
-.Links_Previous svg,
-.Links_Next svg {
-  width: 16px;
-  height: 16px;
-}
-.Links_Previous {
-  margin: 0 auto 0 0;
-}
-.Links_Previous svg {
-  margin: 0 8px 0 0;
-}
-.Links_Next {
-  margin: 0 0 0 auto;
-  text-align: right;
-  justify-content: flex-end;
-}
-.Links_Next svg {
-  margin: 0 0 0 8px;
-}
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="Cover" :style="'background-image: url(' + img + ');'">
+  <div :style="'background-image: url(' + img + ');'" style="height: 18rem">
     &nbsp;
   </div>
 </template>
@@ -14,17 +14,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.Cover {
-  width: 100%;
-  height: 180px;
-  background-size: cover;
-  background-position: center center;
-}
-@media (min-width: 600px) {
-  .Cover {
-    height: 280px;
-  }
-}
-</style>
