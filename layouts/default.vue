@@ -1,5 +1,5 @@
 <template>
-  <div class="Wrapper">
+  <div class="main">
     <Header :app="app" />
     <Nuxt />
   </div>
@@ -13,3 +13,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.main {
+  margin: 0, 100;
+}
+</style>
