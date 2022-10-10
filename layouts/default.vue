@@ -20,9 +20,13 @@ export default {
 
 <style scoped>
 .full-size-background {
-  background-color: black;
+  background-color:black;
 }
 .x-margin {
   background-color: white;
+  /* 余白-右: 100px; */
+  margin-right: 100px;
+  /* 余白-左: 100px; */
+  margin-left: 100px;
 }
 </style>
