@@ -20,13 +20,14 @@ export default {
 
 <style scoped>
 .full-size-background {
-  background-color:black;
+  background: url(https://cdn.discordapp.com/attachments/778104825845907457/1028837038604156968/kra-autosave.png);
+  background-size: contain;
 }
 .x-margin {
   background-color: white;
   /* 余白-右: 100px; */
-  margin-right: 100px;
+  margin-right: 200px;
   /* 余白-左: 100px; */
-  margin-left: 100px;
+  margin-left: 200px;
 }
 </style>
