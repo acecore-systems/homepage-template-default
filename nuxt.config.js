@@ -19,7 +19,7 @@ export default {
   head: {
     title: 'Blog',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ja',
     },
     meta: [
       { charset: 'utf-8' },

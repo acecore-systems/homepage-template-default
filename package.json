@@ -1,5 +1,5 @@
 {
-  "name": "newt-blog-starter-nuxtjs",
+  "name": "hatt-homepage",
   "version": "1.0.0",
   "private": false,
   "scripts": {
@@ -27,10 +27,5 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-vue": "^7.12.1",
     "prettier": "^2.3.2"
-  },
-  "author": "Newt, Inc.",
-  "license": "MIT",
-  "keywords": [
-    "newt"
-  ]
+  }
 }
