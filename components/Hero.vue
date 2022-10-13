@@ -24,7 +24,7 @@
         </div>
       </div>
       <div v-if="data.backgroundImage" class="col-6">
-        <img :src="data.backgroundImage.src" width="450" height="370" alt="" />
+        <img :src="data.backgroundImage.src" width="100%" height="auto" alt="" />
       </div>
     </div>
   </section>
@@ -51,3 +51,6 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+</style>
