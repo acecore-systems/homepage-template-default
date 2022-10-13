@@ -24,7 +24,7 @@
         </div>
       </div>
       <div v-if="data.backgroundImage" class="col-6">
-        <img :src="data.backgroundImage.src" width="100%" height="auto" alt="" />
+        <img :src="data.backgroundImage.src" width="100%" height="cover" alt="" />
       </div>
     </div>
   </section>
