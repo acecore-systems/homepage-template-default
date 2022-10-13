@@ -25,6 +25,7 @@ import { getSiteName } from 'utils/head'
 export default {
   async asyncData({ $config, store }) {
     await store.dispatch('fetchApp', $config)
+    await store.dispatch('fetchLinks', $config)
     await store.dispatch('fetchArticles', $config)
     await store.dispatch('fetchTags', $config)
     await store.dispatch('fetchAuthors', $config)
