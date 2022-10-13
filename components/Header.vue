@@ -15,6 +15,10 @@
         </span>
         {{ title }}
       </NuxtLink>
+      <div class="ms-auto">
+        <a v-for="link in links" :key="link._id" :href="link.href" class="text-decoration-none text-muted ms-3">{{ link.text }}</a>
+      </div>
+
     </div>
   </header>
 </template>
@@ -25,6 +29,10 @@ export default {
     app: {
       type: Object,
       default: null,
+    },
+    links: {
+      type: Array,
+      default: () => [],
     },
   },
   computed: {

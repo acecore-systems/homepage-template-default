@@ -31,6 +31,7 @@ import { htmlToText } from 'html-to-text'
 export default {
   async asyncData({ $config, store }) {
     await store.dispatch('fetchApp', $config)
+    await store.dispatch('fetchLinks', $config)
     return {}
   },
   data() {

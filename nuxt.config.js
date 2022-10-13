@@ -6,6 +6,7 @@ export default {
     appUid: 'homepage',
     token: 'cXUCzvWcO8gjxcRtaJksEukjmZTPDyKWXAZgBLfzBoI',
     apiType: 'cdn',
+    linkModelUid: 'link',
     pageModelUid: 'single-page',
     articleModelUid: 'article',
     tagModelUid: 'tag',

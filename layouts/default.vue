@@ -1,6 +1,6 @@
 <template>
   <div class="Wrapper">
-    <Header :app="app" />
+    <Header :app="app" :links="links" />
     <Nuxt />
   </div>
 </template>
@@ -9,7 +9,7 @@
 import { mapGetters } from 'vuex'
 export default {
   computed: {
-    ...mapGetters(['app']),
+    ...mapGetters(['app','links']),
   },
 }
 </script>
