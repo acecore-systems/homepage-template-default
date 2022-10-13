@@ -5,8 +5,8 @@
       人気のタグ
     </h3>
     <ul class="list-unstyled">
-      <li v-for="tag in tags" :key="tag._id">
-        <NuxtLink :to="`/blog/tag/${tag.slug}`" class="ps-4 text-muted"
+      <li v-for="tag in tags" :key="tag._id" class="mb-1">
+        <NuxtLink :to="`/blog/tag/${tag.slug}`" class="ps-4 text-muted text-decoration-none"
           >{{ tag.name }}({{ tag.total }})</NuxtLink
         >
       </li>
@@ -16,8 +16,8 @@
       アーカイブ
     </h3>
     <ul class="list-unstyled">
-      <li v-for="archive in archives" :key="archive.year">
-        <NuxtLink :to="`/blog/archive/${archive.year}`" class="ps-4 text-muted"
+      <li v-for="archive in archives" :key="archive.year" class="mb-1">
+        <NuxtLink :to="`/blog/archive/${archive.year}`" class="ps-4 text-muted text-decoration-none mb-3"
           >{{ archive.year }}({{ archive.count }})</NuxtLink
         >
       </li>
@@ -27,8 +27,8 @@
       ライター
     </h3>
     <ul class="list-unstyled">
-      <li v-for="author in authors" :key="author._id">
-        <NuxtLink :to="`/blog/author/${author.slug}`" class="ps-4 text-muted">
+      <li v-for="author in authors" :key="author._id" class="mb-1">
+        <NuxtLink :to="`/blog/author/${author.slug}`" class="ps-4 text-muted text-decoration-none ">
           <img
             v-if="author.profileImage && author.profileImage.src"
             :src="author.profileImage.src"
