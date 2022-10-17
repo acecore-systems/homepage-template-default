@@ -3,7 +3,7 @@
   <div class="full-size-background">
     <!-- 左右に余白を設けて背景が見えるようにする -->
     <div class="x-margin">
-      <Header :app="app" />
+      <Header :app="app" :links="links" />
       <Nuxt />
     </div>
   </div>
@@ -13,7 +13,7 @@
 import { mapGetters } from 'vuex'
 export default {
   computed: {
-    ...mapGetters(['app']),
+    ...mapGetters(['app','links']),
   },
 }
 </script>

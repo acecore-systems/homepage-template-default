@@ -14,6 +14,7 @@ import { mapGetters } from 'vuex'
 export default {
   async asyncData({ store, $config, params }) {
     await store.dispatch('fetchApp', $config)
+    await store.dispatch('fetchLinks', $config)
     await store.dispatch('fetchPage', {
       ...$config,
       slug: params.slug,

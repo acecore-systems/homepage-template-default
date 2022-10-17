@@ -6,6 +6,7 @@ export default {
     appUid: 'homepage',
     token: 'cXUCzvWcO8gjxcRtaJksEukjmZTPDyKWXAZgBLfzBoI',
     apiType: 'cdn',
+    linkModelUid: 'link',
     pageModelUid: 'single-page',
     articleModelUid: 'article',
     tagModelUid: 'tag',
@@ -17,9 +18,9 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Blog',
+    title: 'hatt-homepage',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ja',
     },
     meta: [
       { charset: 'utf-8' },
@@ -50,6 +51,10 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
   ],
+
+  bootstrapVue: {
+    icons: true
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
