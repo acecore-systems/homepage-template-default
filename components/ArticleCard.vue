@@ -101,4 +101,7 @@ export default {
   object-fit: cover;
   object-position: 50
 }
+tag {
+  color:#626262;
+}
 </style>
