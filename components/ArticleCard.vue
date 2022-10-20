@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-5">
         <template v-if="article.coverImage">
-          <img :src="article.coverImage.src" alt="" width="300" height="200"/>
+          <img :src="article.coverImage.src" class="samenaleimg" alt="" width="300" height="200"/>
         </template>
         <template v-else>
           <svg
@@ -93,3 +93,12 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.samenaleimg {
+  width: 300;
+  height: 200;
+  object-fit: cover;
+  object-position: 50
+}
+</style>
