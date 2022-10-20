@@ -22,15 +22,10 @@ export default {
 .full-size-background {
   background: url(https://cdn.discordapp.com/attachments/778104825845907457/1028837038604156968/kra-autosave.png);
   background-size: cover;
-  width: 100%;
-  height: 400;
 }
 .x-margin {
-  background-color: white;
-  /* 余白-右: 100px; */
-  margin-right: 15%;
-  /* 余白-左: 100px; */
-  margin-left: 15%;
+  margin: 0 15%;
+
   background-color: rgba(255, 255, 255, 0.8);
 }
 </style>
