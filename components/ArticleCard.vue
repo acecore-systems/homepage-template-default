@@ -102,6 +102,16 @@ export default {
   object-position: 50
 }
 tag {
-  color:#626262;
+  color:#6c757d;
+}
+.card-text {
+  color: #6c757d;
+  list-style-type: none;
+}
+.row {
+  color: #343a40;
+}
+.  {
+  color:#6c757d;
 }
 </style>
