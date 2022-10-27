@@ -101,17 +101,24 @@ export default {
   object-fit: cover;
   object-position: 50
 }
-tag {
-  color:#6c757d;
-}
 .card-text {
   color: #6c757d;
   list-style-type: none;
 }
-.row {
+.card-text li {
+    margin: 0 4px 4px 0;
+    padding: 0 5px;
+    list-style: none;
+    font-size: 1.2rem;
+    color: #888;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    display: inline-block;
+}
+.card-title {
   color: #343a40;
 }
-.  {
-  color:#6c757d;
+.col-10 {
+  color: #343a40;
 }
 </style>
