@@ -103,7 +103,6 @@ export default {
 }
 .card-text {
   color: #6c757d;
-  list-style-type: none;
 }
 .card-text li {
     margin: 0 4px 4px 0;
@@ -116,9 +115,11 @@ export default {
     display: inline-block;
 }
 .card-title {
-  color: #343a40;
+  color: #313131;
+  : #313131;
 }
-.col-10 {
-  color: #343a40;
+.row {
+  color: #6c757d;
+  text-decoration-line: none;
 }
 </style>
