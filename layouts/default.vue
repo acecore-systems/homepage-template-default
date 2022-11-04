@@ -1,7 +1,9 @@
 <template>
-  <div class="Wrapper">
-    <Header :app="app" :links="links" />
-    <Nuxt />
+  <div class="full-size-background pb-1" :style="{ backgroundImage: 'url(' + app.cover.value + ')' }">
+    <div class="x-margin pb-1">
+      <Header :app="app" :links="links" />
+      <Nuxt />
+    </div>
   </div>
 </template>
 
@@ -13,3 +15,13 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.full-size-background {
+  background-size: cover;
+}
+.x-margin {
+  margin: 0 15%;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+</style>
