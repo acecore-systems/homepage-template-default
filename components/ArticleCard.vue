@@ -116,7 +116,6 @@ export default {
 }
 .card-title {
   color: #313131;
-  : #313131;
 }
 .row {
   color: #6c757d;
