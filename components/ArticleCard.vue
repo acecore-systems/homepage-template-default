@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink v-if="article" class="card mb-3" :to="`/blog/article/${article.slug}`">
+  <NuxtLink v-if="article" class="text-decoration-none" :to="`/blog/article/${article.slug}`">
     <div class="row">
       <div class="col-5">
         <template v-if="article.coverImage">
@@ -99,7 +99,7 @@ export default {
   width: 300;
   height: 200;
   object-fit: cover;
-  object-position: 50
+  object-position: 50;
 }
 .card-text {
   color: #6c757d;
@@ -119,6 +119,8 @@ export default {
 }
 .row {
   color: #6c757d;
-  text-decoration-line: none;
+}
+svg {
+  background: rgb(243, 243, 243);
 }
 </style>
