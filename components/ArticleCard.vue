@@ -96,10 +96,12 @@ export default {
 
 <style scoped>
 .samenaleimg {
-  width: 300;
-  height: 200;
+  width: 300px;
+  height: 200px;
+  margin: 50px 0 50px 0;
   object-fit: cover;
   object-position: 50;
+  border-radius: 8px;
 }
 .card-text {
   color: #6c757d;
@@ -114,6 +116,9 @@ export default {
     border-radius: 4px;
     display: inline-block;
 }
+.col-7{
+  margin-top: 50px;
+}
 .card-title {
   color: #313131;
 }
@@ -122,5 +127,6 @@ export default {
 }
 svg {
   background: rgb(243, 243, 243);
+  border-radius: 50px;
 }
 </style>
