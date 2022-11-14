@@ -114,7 +114,7 @@ export default {
   
 }
 .card-text li {
-    margin: 0 4px 4px 0;
+    margin: 0 12px 0 0;
     padding: 0 5px;
     list-style: none;
     font-size: 1.2rem;
@@ -133,11 +133,13 @@ export default {
 .card-body {
   color: #6c757d;
 }
-.row-two {
-  display:inline-block;
-}
 .row {
   border-bottom: 1px solid #ccc;
+}
+.row-two {
+  margin-top: -40px;
+}
+.row-three {
 }
 svg {
   background: rgb(243, 243, 243);
