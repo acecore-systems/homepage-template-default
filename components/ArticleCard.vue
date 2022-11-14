@@ -26,7 +26,7 @@
           <ul class="card-text">
             <li v-for="tag in article.tags" :key="tag._id">#{{ tag.name }}</li>
           </ul>
-          <div class="row">
+          <div class="row-two">
             <div class="col-2">
               <template v-if="article.author && article.author.profileImage">
               <img
@@ -53,11 +53,11 @@
               </div>
             </template>
             </div>
-            <div class="col-10">
-              <div class="row">
+            <div class="col-three">
+              <div class="row-three">
                 {{ authorName }}
               </div>
-              <div class="row">
+              <div class="row-three">
                 <time
                   :datetime="formatDate(article._sys.createdAt).replace(/\//gm, '-')"
                   >{{ formatDate(article._sys.createdAt) }}</time
@@ -105,6 +105,13 @@ export default {
 }
 .card-text {
   color: #6c757d;
+  padding: 0%;
+}
+.col-2 {
+  padding: 0% ;
+}
+.row-two {
+  
 }
 .card-text li {
     margin: 0 4px 4px 0;
@@ -116,17 +123,25 @@ export default {
     border-radius: 4px;
     display: inline-block;
 }
-.col-7{
+.col-7 {
   margin-top: 50px;
+  border-bottom: none;
 }
 .card-title {
   color: #313131;
 }
-.row {
+.card-body {
   color: #6c757d;
+}
+.row-two {
+  display:inline-block;
+}
+.row {
+  border-bottom: 1px solid #ccc;
 }
 svg {
   background: rgb(243, 243, 243);
   border-radius: 50px;
+  margin-top: 50px;
 }
 </style>
