@@ -11,7 +11,7 @@
     "lint": "yarn lint:js"
   },
   "dependencies": {
-    "@nuxtjs/google-adsense": "^2.0.0",
+    "@nuxtjs/google-adsense": "2.0.0",
     "bootstrap": "^5.2.2",
     "bootstrap-icons": "^1.9.1",
     "bootstrap-vue": "^2.22.0",
