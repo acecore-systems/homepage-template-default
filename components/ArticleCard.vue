@@ -108,10 +108,7 @@ export default {
   padding: 0%;
 }
 .col-2 {
-  padding: 0% ;
-}
-.row-two {
-  
+  padding: 0%;
 }
 .card-text li {
     margin: 0 12px 0 0;
@@ -136,14 +133,8 @@ export default {
 .row {
   border-bottom: 1px solid #ccc;
 }
-.row-two {
-  margin-top: -40px;
-}
-.row-three {
-}
 svg {
   background: rgb(243, 243, 243);
-  border-radius: 50px;
-  margin-top: 50px;
+  border-radius: 50%;
 }
 </style>
