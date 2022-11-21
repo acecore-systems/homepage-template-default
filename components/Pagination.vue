@@ -40,3 +40,24 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.Pagination_Items{
+    padding: 0 10px;
+    list-style: none;
+    font-size: 1.2rem;
+    background-color: #6c7576;
+    border: 1px solid #6c7576;
+    border-radius: 4px;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+  }
+.Pagination_Button{
+  color: rgb(255, 255, 255);
+  text-decoration:none;
+}
+.Pagination{
+  padding: 10%;
+}
+</style>
