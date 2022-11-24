@@ -1,6 +1,4 @@
 <template>
-  <div>
-    <Cover v-if="app && app.cover && app.cover.value" :img="app.cover.value" />
     <div class="container">
       <div class="row mt-5">
         <main class="col-8">
