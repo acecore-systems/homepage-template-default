@@ -1,8 +1,21 @@
 <template>
   <nav class="Pagination">
     <ul class="Pagination_Items">
+      <div class="text-decoration-none"></div>
+        <div class="btn btn-secondary"></div>
+          <div class="px-3"></div>
+            <div class="list-unstyled"></div>
+              <div class="fs-3"></div>
+                <div class="bg-secondary"></div>
+                  <div class="border"></div>
+                    <div class="rounded"></div>
+                      <div class="d-inline-block"></div>
+                        <div class="position-absolute"></div>
+                          <div class="start-50"></div>
       <li v-for="page in pages" :key="page.number" class="Pagination_Item">
         <NuxtLink type="button" :to="`${basePath}/page/${page.number}`" :class="`Pagination_Button ${page.isCurrent ? '_current' : ''}`">{{page.number}}</NuxtLink>
+      <div class="text-decoration-none"></div>
+        <div class="btn btn-secondary"></div>
       </li>
     </ul>
   </nav>
@@ -42,21 +55,7 @@ export default {
 </script>
 
 <style scoped>
-.Pagination_Items{
-    padding: 0 10px;
-    list-style: none;
-    font-size: 1.2rem;
-    background-color: #6c7576;
-    border: 1px solid #6c7576;
-    border-radius: 4px;
-    display: inline-block;
-    position: absolute;
-    left: 50%;
-  }
-.Pagination_Button{
-  color: rgb(255, 255, 255);
-  text-decoration:none;
-}
+
 .Pagination{
   padding: 10%;
 }
