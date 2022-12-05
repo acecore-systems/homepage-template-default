@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-5">
         <template v-if="article.coverImage">
-          <img :src="article.coverImage.src" class="samenaleimg" alt="" width="300" height="200"/>
+          <img :src="article.coverImage.src" class="samenaleimg w-110 h-70" alt="" width="300" height="200"/>
         </template>
         <template v-else>
           <svg
@@ -21,13 +21,13 @@
         </template>
       </div>
       <div class="col-7">
-        <div class="card-body">
-          <h3 class="card-title">{{ article.title }}</h3>
-          <ul class="card-text">
-            <li v-for="tag in article.tags" :key="tag._id">#{{ tag.name }}</li>
+        <div class="card-body link-secondary">
+          <h3 class="card-title link-dark">{{ article.title }}</h3>
+          <ul class="card-text p-0 text-secondary">
+            <li v-for="tag in article.tags" :key="tag._id" class ="p-1 bg-light border d-inline-block rounded list-group-none">#{{ tag.name }}</li>
           </ul>
           <div class="row-two">
-            <div class="col-2">
+            <div class="col-2 p-0">
               <template v-if="article.author && article.author.profileImage">
               <img
                 :src="article.author.profileImage.src"
@@ -53,8 +53,6 @@
               </div>
             </template>
             </div>
-            <div class="col-three">
-              <div class="row-three">
                 {{ authorName }}
               </div>
               <div class="row-three">
@@ -66,8 +64,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
   </NuxtLink>
 </template>
 
@@ -96,39 +92,14 @@ export default {
 
 <style scoped>
 .samenaleimg {
-  width: 300px;
-  height: 200px;
   margin: 50px 0 50px 0;
   object-fit: cover;
   object-position: 50;
   border-radius: 8px;
 }
-.card-text {
-  color: #6c757d;
-  padding: 0%;
-}
-.col-2 {
-  padding: 0%;
-}
-.card-text li {
-    margin: 0 12px 0 0;
-    padding: 0 5px;
-    list-style: none;
-    font-size: 1.2rem;
-    color: #888;
-    border: 1px solid #e5e5e5;
-    border-radius: 4px;
-    display: inline-block;
-}
 .col-7 {
   margin-top: 50px;
   border-bottom: none;
-}
-.card-title {
-  color: #313131;
-}
-.card-body {
-  color: #6c757d;
 }
 .row {
   border-bottom: 1px solid #ccc;
