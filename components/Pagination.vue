@@ -1,21 +1,8 @@
 <template>
   <nav class="Pagination">
-    <ul class="Pagination_Items">
-      <div class="text-decoration-none"></div>
-        <div class="btn btn-secondary"></div>
-          <div class="px-3"></div>
-            <div class="list-unstyled"></div>
-              <div class="fs-3"></div>
-                <div class="bg-secondary"></div>
-                  <div class="border"></div>
-                    <div class="rounded"></div>
-                      <div class="d-inline-block"></div>
-                        <div class="position-absolute"></div>
-                          <div class="start-50"></div>
+    <ul class="Pagination_Items px-0 list-unstyled fs-0.5 bg-secondary border rounded d-inline-block position-absolute start-50">
       <li v-for="page in pages" :key="page.number" class="Pagination_Item">
-        <NuxtLink type="button" :to="`${basePath}/page/${page.number}`" :class="`Pagination_Button ${page.isCurrent ? '_current' : ''}`">{{page.number}}</NuxtLink>
-      <div class="text-decoration-none"></div>
-        <div class="btn btn-secondary"></div>
+        <NuxtLink type="button" :to="`${basePath}/page/${page.number}`" :class="`Pagination_Button text-decoration-none btn btn-secondary ${page.isCurrent ? '_current' : ''}`">{{page.number}}</NuxtLink>
       </li>
     </ul>
   </nav>
@@ -55,8 +42,7 @@ export default {
 </script>
 
 <style scoped>
-
 .Pagination{
-  padding: 10%;
+  padding: 20%;
 }
 </style>
