@@ -55,7 +55,6 @@
             </div>
                 {{ authorName }}
               </div>
-              <div class="row-three">
                 <time
                   :datetime="formatDate(article._sys.createdAt).replace(/\//gm, '-')"
                   >{{ formatDate(article._sys.createdAt) }}</time
