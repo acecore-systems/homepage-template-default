@@ -44,6 +44,11 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    ["@nuxtjs/google-adsense",
+    {
+      id: "ca-pub-3935803464310919",
+      pageLevelAds: true, // 自動広告を表示させる場合
+    }],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
