@@ -22,7 +22,7 @@
       </div>
       <div class="col-7">
         <div class="card-body link-secondary">
-          <h3 class="card-title link-dark">{{ article.title }}</h3>
+          <h4 class="card-title link-dark">{{ article.title }}</h4>
           <ul class="card-text p-0 text-secondary">
             <li v-for="tag in article.tags" :key="tag._id" class ="p-1 bg-light border d-inline-block rounded list-group-none">#{{ tag.name }}</li>
           </ul>
@@ -97,7 +97,10 @@ export default {
 }
 .col-7 {
   margin-top: 50px;
+  margin: auto;
   border-bottom: none;
+  padding-left: 10%;
+  padding-right: 0%;
 }
 .row {
   border-bottom: 1px solid #ccc;
