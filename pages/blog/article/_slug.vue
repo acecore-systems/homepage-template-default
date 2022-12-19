@@ -3,7 +3,7 @@
     <article v-if="currentArticle">
       <img :src="currentArticle.coverImage.src" alt="" class=" mb-5 rounded"/>
       <h1 class="mb-3">{{ currentArticle.title }}</h1>
-      <ul class="mb-3">
+      <ul class="mb-3 list-unstyled">
         <li v-for="tag in currentArticle.tags" :key="tag._id">
           <NuxtLink :to="`/blog/tag/${tag.slug}`">#{{ tag.name }}</NuxtLink>
         </li>
