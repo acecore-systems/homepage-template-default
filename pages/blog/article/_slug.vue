@@ -1,7 +1,7 @@
 <template>
-  <main class="container">
+  <main class="container p-5">
     <article v-if="currentArticle">
-      <img :src="currentArticle.coverImage.src" alt="" class="w-100 mb-5"/>
+      <img :src="currentArticle.coverImage.src" alt="" class=" mb-5 rounded"/>
       <h1 class="mb-3">{{ currentArticle.title }}</h1>
       <ul class="mb-3">
         <li v-for="tag in currentArticle.tags" :key="tag._id">
@@ -356,3 +356,11 @@ export default {
   },
 }
 </script>
+<style scoped>
+img {
+  width: 848px;
+  height: 500px;
+  object-fit: cover;
+  object-position: 50% 100%;
+}
+</style>
