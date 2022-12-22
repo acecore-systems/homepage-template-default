@@ -1,11 +1,11 @@
 <template>
   <main class="container p-5">
     <article v-if="currentArticle">
-      <img :src="currentArticle.coverImage.src" alt="" class=" mb-5 rounded"/>
-      <h1 class="mb-3">{{ currentArticle.title }}</h1>
+      <img :src="currentArticle.coverImage.src" alt="" class=" mb-5 rounded-3"/>
+      <h2 class="mb-3">{{ currentArticle.title }}</h2>
       <ul class="mb-3 list-unstyled">
-        <li v-for="tag in currentArticle.tags" :key="tag._id">
-          <NuxtLink :to="`/blog/tag/${tag.slug}`">#{{ tag.name }}</NuxtLink>
+        <li v-for="tag in currentArticle.tags" :key="tag._id" class="border border-secondary btn btn-sm">
+          <NuxtLink :to="`/blog/tag/${tag.slug}`" class="text-dark text-decoration-none">#{{ tag.name }}</NuxtLink>
         </li>
       </ul>
       <div class="row mb-5 d-flex align-items-center">
