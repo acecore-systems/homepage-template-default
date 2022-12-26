@@ -29,6 +29,7 @@
               height="20px"
               viewBox="0 0 24 24"
               fill="#CCCCCC"
+              class="border-3 rounded-5 bg-secondary bg-opacity-10"
             >
               <path d="M0 0h24v24H0V0z" fill="none" />
               <path
