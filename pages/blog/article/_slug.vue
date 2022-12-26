@@ -41,7 +41,7 @@
         <div class="col-6">
           <NuxtLink
             :to="`/blog/author/${currentArticle.author.slug}`"
-            class="Article_AuthorName"
+            class="Article_AuthorName text-dark text-decoration-none"
             >{{ authorName }}</NuxtLink
           >
           <time :datetime="publishDateForAttr" class="Article_Date">{{
