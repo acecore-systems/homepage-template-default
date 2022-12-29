@@ -41,10 +41,10 @@
         <div class="col-6">
           <NuxtLink
             :to="`/blog/author/${currentArticle.author.slug}`"
-            class="Article_AuthorName text-dark text-decoration-none"
+            class="Article_AuthorName text-dark text-decoration-none m-5"
             >{{ authorName }}</NuxtLink
           >
-          <time :datetime="publishDateForAttr" class="Article_Date">{{
+          <time :datetime="publishDateForAttr" class="Article_Date m-5">{{
             publishDate
           }}</time>
         </div>
@@ -139,6 +139,7 @@
                 height="28px"
                 viewBox="0 0 24 24"
                 fill="#CCCCCC"
+                class="border-3 rounded-5 bg-secondary bg-opacity-10"
               >
                 <path d="M0 0h24v24H0V0z" fill="none" />
                 <path
