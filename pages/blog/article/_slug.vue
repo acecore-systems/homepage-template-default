@@ -25,8 +25,8 @@
           <template v-else>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="20px"
-              height="20px"
+              width="35px"
+              height="35px"
               viewBox="0 0 24 24"
               fill="#CCCCCC"
               class="border-3 rounded-5 bg-secondary bg-opacity-10"
