@@ -41,10 +41,10 @@
         <div class="col-6">
           <NuxtLink
             :to="`/blog/author/${currentArticle.author.slug}`"
-            class="Article_AuthorName text-dark text-decoration-none m-5"
+            class="Article_AuthorName text-dark text-decoration-none text-reft"
             >{{ authorName }}</NuxtLink
           >
-          <time :datetime="publishDateForAttr" class="Article_Date m-5">{{
+          <time :datetime="publishDateForAttr" class="Article_Date ">{{
             publishDate
           }}</time>
         </div>
@@ -84,9 +84,9 @@
       <div class="mb-5" v-html="currentArticle.body"></div>
 
       <div class="row border-top pt-4 mb-4">
-        <div class="row d-flex align-items-center">
-            <div class="col text-muted">この記事を共有</div>
-            <button type="col button" @click="shareOnTwitter" class="btn">
+        <div class="row">
+            <div class="col text-muted ps-0 ms-0 text-left">この記事を共有</div>
+            <button type="col button" @click="shareOnTwitter" class="col btn ps-0 ms-0 text-left">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="24px"
@@ -99,7 +99,7 @@
                 />
               </svg>
             </button>
-            <button type="col button" @click="shareOnFacebook" class="btn">
+            <button type="col button" @click="shareOnFacebook" class="col btn ps-0 ms-0 text-left">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="24px"
@@ -150,7 +150,7 @@
           </div>
           <div class="col-10">
             <div class="card-body">
-              <div class="card-title">
+              <div class="card-title text-decoration-none">
                 {{ authorName }}
               </div>
               <div class="card-text">
@@ -364,5 +364,8 @@ img {
   height: 500px;
   object-fit: cover;
   object-position: 50% 100%;
+}
+a.col-2 {
+  margin-right: -10%;
 }
 </style>
