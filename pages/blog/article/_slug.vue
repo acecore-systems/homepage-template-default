@@ -44,7 +44,7 @@
             class="Article_AuthorName text-dark text-decoration-none text-reft"
             >{{ authorName }}</NuxtLink
           >
-          <time :datetime="publishDateForAttr" class="Article_Date ">{{
+          <time :datetime="publishDateForAttr" class="Article_Date text-secondary">{{
             publishDate
           }}</time>
         </div>
@@ -367,5 +367,8 @@ img {
 }
 a.col-2 {
   margin-right: -10%;
+}
+.Article_Date {
+  display: block;
 }
 </style>
