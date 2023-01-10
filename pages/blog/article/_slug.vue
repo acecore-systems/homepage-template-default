@@ -367,6 +367,7 @@ img {
 }
 a.col-2 {
   margin-right: -10%;
+  padding-right: 0%;
 }
 .Article_Date {
   display: block;
@@ -375,6 +376,9 @@ button.btn {
   margin: 0 -45% 0 -45%;
 }
 div.text-muted {
-  margin: 0 -50% 0 auto;
+  margin: 0 -55% 0 auto;
+}
+.col-6 {
+  margin-right: 80px;
 }
 </style>
