@@ -381,4 +381,7 @@ div.text-muted {
 .col-6 {
   margin-right: 80px;
 }
+div.col.text-muted {
+  margin-right: -80%;
+}
 </style>
