@@ -150,14 +150,14 @@
           </div>
           <div class="col-10">
             <div class="card-body">
-              <div class="card-title text-decoration-none">
+              <a class="card-title text-dark text-decoration-none">
                 {{ authorName }}
-              </div>
-              <div class="card-text">
+              </a>
+              <a class="card-text text-dark text-decoration-none">
                 <!-- eslint-disable vue/no-v-html -->
-                <div class="Author_Description" v-html="authorBio"></div>
+                <a class="Author_Description text-dark text-decoration-none" v-html="authorBio"></a>
                 <!-- eslint-enable vue/no-v-html -->
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -167,7 +167,7 @@
         <NuxtLink
           v-if="previousArticle"
           :to="`/blog/article/${previousArticle.slug}`"
-          class="float-left"
+          class="float-left text-dark text-decoration-none"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -399,5 +399,14 @@ button.col-3.btn {
 button.col-4.btn {
   margin: 0 0 0 20px ;
   padding: 0;
+}
+.col-2 {
+  text-align: left;
+}
+a {
+  text-decoration: none;
+}
+.col-10 {
+  margin-left: -5%;
 }
 </style>
