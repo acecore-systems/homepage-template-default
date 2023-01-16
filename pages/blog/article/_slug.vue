@@ -364,6 +364,7 @@ img {
   height: 500px;
   object-fit: cover;
   object-position: 50% 100%;
+  max-width: 100%;
 }
 a.col-2 {
   margin-right: -10%;
