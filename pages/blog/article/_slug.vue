@@ -86,7 +86,7 @@
       <div class="row border-top pt-4 mb-4">
         <div class="row">
             <div class="col text-muted ps-0 ms-0 text-left">この記事を共有</div>
-            <button type="col button" @click="shareOnTwitter" class="col btn ps-0 ms-0 text-left">
+            <button type="col button" @click="shareOnTwitter" class="col-3 btn ps-0 ms-0 text-left">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="24px"
@@ -99,7 +99,7 @@
                 />
               </svg>
             </button>
-            <button type="col button" @click="shareOnFacebook" class="col btn ps-0 ms-0 text-left">
+            <button type="col button" @click="shareOnFacebook" class="col-4 btn ps-0 ms-0 text-left">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="24px"
@@ -383,5 +383,21 @@ div.text-muted {
 }
 div.col.text-muted {
   margin-right: -80%;
+}
+.row.border-top {
+  margin: 0 0 0 auto;
+}
+div.col.text-muted {
+  text-align: left;
+  margin-right: -85%;
+}
+button.col-3.btn {
+  margin-right: -35%;
+  padding: 0;
+  text-align: left;
+}
+button.col-4.btn {
+  margin: 0 0 0 20px ;
+  padding: 0;
 }
 </style>
