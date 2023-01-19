@@ -1,7 +1,7 @@
 <template>
-  <main class="container p-5">
+  <main class="container">
     <article v-if="currentArticle">
-      <img :src="currentArticle.coverImage.src" alt="" class=" mb-5 rounded-3"/>
+      <img :src="currentArticle.coverImage.src" alt="" class="rounded-3"/>
       <h2 class="mb-3">{{ currentArticle.title }}</h2>
       <ul class="mb-3 list-unstyled">
         <li v-for="tag in currentArticle.tags" :key="tag._id" class="border border-secondary btn btn-sm">
@@ -359,16 +359,19 @@ export default {
 }
 </script>
 <style scoped>
+.container {
+  padding: 3.5vw;
+}
 img {
-  width: 848px;
-  height: 500px;
+  width: 84.8vw;
+  height: 36vw;
   object-fit: cover;
   object-position: 50% 100%;
   max-width: 100%;
+  margin-bottom: 4.8vw;
 }
 a.col-2 {
-  margin-right: -10%;
-  padding-right: 0%;
+  margin-right: -7vw;
 }
 .Article_Date {
   display: block;
@@ -380,7 +383,7 @@ div.text-muted {
   margin: 0 -55% 0 auto;
 }
 .col-6 {
-  margin-right: 80px;
+  margin-right: 1.3vw;
 }
 div.col.text-muted {
   margin-right: -80%;
