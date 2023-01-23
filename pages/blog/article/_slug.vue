@@ -377,16 +377,16 @@ a.col-2 {
   display: block;
 }
 button.btn {
-  margin: 0 -45% 0 -45%;
+  margin: 0 -9.5vw 0 -9.5vw;
 }
 div.text-muted {
-  margin: 0 -55% 0 auto;
+  margin: 0 -12vw 0 auto;
 }
 .col-6 {
   margin-right: 1.3vw;
 }
 div.col.text-muted {
-  margin-right: -80%;
+  display: inline-block;
 }
 .row.border-top {
   margin: 0 0 0 auto;
@@ -396,13 +396,15 @@ div.col.text-muted {
   margin-right: -85%;
 }
 button.col-3.btn {
-  margin-right: -35%;
+  margin-right: -21vw;
   padding: 0;
   text-align: left;
+  display: inline-block;
 }
 button.col-4.btn {
-  margin: 0 0 0 20px ;
+  margin: 0 0 0 0.2vw ;
   padding: 0;
+  display: inline-block;
 }
 .col-2 {
   text-align: left;
