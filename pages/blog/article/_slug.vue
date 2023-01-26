@@ -1,7 +1,10 @@
 <template>
   <main class="container p-lg-5 p-2">
     <article v-if="currentArticle">
-      <img :src="currentArticle.coverImage.src" alt="" class="rounded-3"/>
+      <img :src="currentArticle.coverImage.src" alt="" class="
+        rounded-3
+        w-100
+      " style="object-fit: cover; height: 35rem;"/>
       <h2 class="mb-3">{{ currentArticle.title }}</h2>
       <ul class="mb-3 list-unstyled">
         <li v-for="tag in currentArticle.tags" :key="tag._id" class="border border-secondary btn btn-sm">
@@ -48,7 +51,7 @@
             publishDate
           }}</time>
         </div>
-        <div class="col-6">
+        <div class="col-6 text-end">
           <div class="text-muted">この記事を共有</div>
           <button type="button" @click="shareOnTwitter" class="btn">
             <svg
@@ -357,29 +360,6 @@ export default {
 }
 </script>
 <style scoped>
-img {
-  width: 84.8vw;
-  height: 36vw;
-  object-fit: cover;
-  object-position: 50% 100%;
-  max-width: 100%;
-  margin-bottom: 4.8vw;
-}
-a.col-2 {
-  margin-right: -7vw;
-}
-.Article_Date {
-  display: block;
-}
-button.btn {
-  margin: 0 -9.5vw 0 -9.5vw;
-}
-div.text-muted {
-  margin: 0 -12vw 0 auto;
-}
-.col-6 {
-  margin-right: 1.3vw;
-}
 div.col.text-muted {
   display: inline-block;
 }
