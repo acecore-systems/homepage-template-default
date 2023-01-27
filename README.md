@@ -4,7 +4,9 @@ hatt氏のホームページです。
 
 # 技術
 
-言語 | vue.js, javascript
-フレームワーク | nuxt.js
-CSS | BootStrap
-CMS | NEWT
+|  |  |
+|-|-|
+| 言語 | vue.js, javascript |
+| フレームワーク | nuxt.js |
+| CSS | BootStrap |
+| CMS | NEWT |
