@@ -11,7 +11,7 @@
           <NuxtLink :to="`/blog/tag/${tag.slug}`" class="text-dark text-decoration-none">#{{ tag.name }}</NuxtLink>
         </li>
       </ul>
-      <div class="row mb-5 d-flex align-items-center">
+      <div class="mb-5 d-flex align-items-center">
         <div class="col-6">
           <a href="#">
           <template
@@ -44,7 +44,7 @@
         </a>
           <NuxtLink
             :to="`/blog/author/${currentArticle.author.slug}`"
-            class="Article_AuthorName text-dark text-decoration-none text-reft"
+            class="Article_AuthorName text-dark text-decoration-none"
             >{{ authorName }}</NuxtLink
           >
           <time :datetime="publishDateForAttr" class="Article_Date text-secondary">{{
@@ -52,8 +52,8 @@
           }}</time>
         </div>
         <div class="col-6 text-end">
-          <div class="text-muted">この記事を共有</div>
-          <button type="button" @click="shareOnTwitter" class="btn">
+          <div class="text-muted d-inline-flex">この記事を共有</div>
+          <button type="button" @click="shareOnTwitter" class="btn col-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -66,7 +66,7 @@
               />
             </svg>
           </button>
-          <button type="button" @click="shareOnFacebook" class="btn">
+          <button type="button" @click="shareOnFacebook" class="btn col-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -84,10 +84,11 @@
       <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="mb-5" v-html="currentArticle.body"></div>
 
-      <div class="row border-top pt-4 mb-4">
-        <div class="row">
-            <div class="col text-muted ps-0 ms-0 text-left">この記事を共有</div>
-            <button type="col button" @click="shareOnTwitter" class="col-3 btn ps-0 ms-0 text-left">
+      <div class="row border-top">
+        <div class="col-3 text-left text-nowrap">
+          <div row>
+            <div class="d-inline-flex text-muted ms-0 text-left py-2">この記事を共有</div>
+            <button type="button" @click="shareOnTwitter" class="col-2 btn ms-0 text-left">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="24px"
@@ -100,7 +101,7 @@
                 />
               </svg>
             </button>
-            <button type="col button" @click="shareOnFacebook" class="col-4 btn ps-0 ms-0 text-left">
+            <button type="button" @click="shareOnFacebook" class="col-3 btn ms-0 text-left">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="24px"
@@ -113,6 +114,7 @@
                 />
               </svg>
             </button>
+          </div>
           </div>
       </div>
 
@@ -360,34 +362,8 @@ export default {
 }
 </script>
 <style scoped>
-div.col.text-muted {
-  display: inline-block;
-}
-.row.border-top {
-  margin: 0 0 0 auto;
-}
-div.col.text-muted {
-  text-align: left;
-  margin-right: -85%;
-}
-button.col-3.btn {
-  margin-right: -21vw;
-  padding: 0;
-  text-align: left;
-  display: inline-block;
-}
-button.col-4.btn {
-  margin: 0 0 0 0.2vw ;
-  padding: 0;
-  display: inline-block;
-}
-.col-2 {
-  text-align: left;
-}
 a {
   text-decoration: none;
 }
-.col-10 {
-  margin-left: -5%;
-}
+
 </style>
