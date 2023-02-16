@@ -13,6 +13,7 @@
       </ul>
       <div class="mb-5 d-flex align-items-center">
         <div class="col-6">
+          <div class="row  d-inline-block">
           <a href="#">
           <template
             v-if="
@@ -44,14 +45,14 @@
         </a>
           <NuxtLink
             :to="`/blog/author/${currentArticle.author.slug}`"
-            class="Article_AuthorName text-dark text-decoration-none"
+            class="Article_AuthorName text-dark"
             >{{ authorName }}</NuxtLink
           >
           <time :datetime="publishDateForAttr" class="Article_Date text-secondary">{{
             publishDate
           }}</time>
-        </div>
-        <div class="col-6 text-end">
+        </div></div>
+        <div class="col-6 text-end text-wrap">
           <div class="text-muted d-inline-flex">この記事を共有</div>
           <button type="button" @click="shareOnTwitter" class="btn col-1">
             <svg
