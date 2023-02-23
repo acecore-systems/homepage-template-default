@@ -13,7 +13,9 @@
       </ul>
       <div class="mb-5">
         <div class="row">
-          <div class="col-1">
+          <div class="col">
+            <div class="row">
+              <div class="col-2 d-flex align-items-end">
             <a href="#">
               <template v-if="
                 currentArticle.author && currentArticle.author.profileImage
@@ -30,7 +32,7 @@
               </template>
             </a>
           </div>
-          <div class="col-5">
+          <div class="col-10">
             <div class="row">
               <NuxtLink :to="`/blog/author/${currentArticle.author.slug}`"
                 class="Article_AuthorName text-dark text-nowrap">{{ authorName }}</NuxtLink>
@@ -39,10 +41,12 @@
               <time :datetime="publishDateForAttr" class="Article_Date text-secondary text-nowrap">{{
                 publishDate
               }}</time>
+              </div>
+            </div>
             </div>
           </div>
 
-        <div class="col-6">
+        <div class="col-8">
           <div class="text-end text-wrap">
             <div class="text-muted d-inline-flex">この記事を共有</div>
             <button type="button" @click="shareOnTwitter" class="btn col-1">
