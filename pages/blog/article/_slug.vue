@@ -4,7 +4,8 @@
       <img :src="currentArticle.coverImage.src" alt="" class="
         rounded-3
         w-100
-      " style="object-fit: cover; height: 35rem;" />
+        object-fit-lg-cover
+      "/>
       <h2 class="mb-3">{{ currentArticle.title }}</h2>
       <ul class="mb-3 list-unstyled">
         <li v-for="tag in currentArticle.tags" :key="tag._id" class="border border-secondary btn btn-sm">
@@ -129,7 +130,7 @@
             </svg>
             前の記事
           </NuxtLink>
-          <NuxtLink v-if="nextArticle" :to="`/blog/article/${nextArticle.slug}`" href="#" class="float-right">
+          <NuxtLink v-if="nextArticle" :to="`/blog/article/${nextArticle.slug}`" href="#" class="float-right text-dark">
             次の記事
             <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24"
               width="24px" fill="#333333">
