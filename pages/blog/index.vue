@@ -1,20 +1,15 @@
 <template>
-    <div class="container">
-      <div class="row mt-5">
-        <main class="col-8">
-          <h2 class="mb-4">最新の記事</h2>
-          <ArticleCard
-            v-for="article in articles"
-            :key="article._id"
-            :article="article"
-          />
-          <Pagination :total="total" :current="1" />
-        </main>
-        <Side :tags="popularTags" :authors="authors" :archives="archives" class="col-4"/>
-      </div>
+  <div class="container">
+    <div class="row mt-5">
+      <main class="col-8">
+        <h2 class="mb-4">最新の記事</h2>
+        <ArticleCard v-for="article in articles" :key="article._id" :article="article" />
+        <Pagination :total="total" :current="1" />
+      </main>
+      <Side :tags="popularTags" :authors="authors" :archives="archives" class="col-4" />
     </div>
   </div>
-</template>
+</div></template>
 
 <script>
 import { mapGetters } from 'vuex'
