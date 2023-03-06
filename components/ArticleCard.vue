@@ -97,7 +97,6 @@ export default {
   margin-top: 50px;
   margin: auto;
   border-bottom: none;
-  padding-left: 10%;
   padding-right: 0%;
 }
 .row {
