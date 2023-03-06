@@ -44,6 +44,7 @@
                   height="20px"
                   viewBox="0 0 24 24"
                   fill="#CCCCCC"
+                  class="rounded-circle"
                 >
                   <path d="M0 0h24v24H0V0z" fill="none" />
                   <path
@@ -104,6 +105,5 @@ export default {
 }
 svg {
   background: rgb(243, 243, 243);
-  border-radius: 50%;
 }
 </style>
