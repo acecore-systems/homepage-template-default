@@ -1,7 +1,7 @@
 <template>
   <NuxtLink v-if="article" class="text-decoration-none" :to="`/blog/article/${article.slug}`">
     <div class="row">
-      <div class="col-5">
+      <div class="col-6">
         <template v-if="article.coverImage">
           <img :src="article.coverImage.src" class="samenaleimg w-110 h-70 my-5 rounded" alt="" width="300" height="200"/>
         </template>
@@ -20,7 +20,7 @@
           </svg>
         </template>
       </div>
-      <div class="col-7">
+      <div class="col-6">
         <div class="card-body link-secondary">
           <h4 class="card-title link-dark">{{ article.title }}</h4>
           <ul class="card-text p-0 text-secondary">
@@ -93,7 +93,7 @@ export default {
 .samenaleimg {
   object-fit: cover;
 }
-.col-7 {
+.col-6 {
   margin-top: 50px;
   margin: auto;
   border-bottom: none;
