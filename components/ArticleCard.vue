@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-5">
         <template v-if="article.coverImage">
-          <img :src="article.coverImage.src" class="samenaleimg w-110 h-70 my-5" alt="" width="300" height="200"/>
+          <img :src="article.coverImage.src" class="samenaleimg w-110 h-70 my-5 rounded" alt="" width="300" height="200"/>
         </template>
         <template v-else>
           <svg
@@ -91,8 +91,6 @@ export default {
 <style scoped>
 .samenaleimg {
   object-fit: cover;
-  object-position: 50;
-  border-radius: 8px;
 }
 .col-7 {
   margin-top: 50px;
