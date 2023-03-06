@@ -97,7 +97,6 @@ export default {
   margin-top: 50px;
   margin: auto;
   border-bottom: none;
-  padding-right: 0%;
 }
 .row {
   border-bottom: 1px solid #ccc;
