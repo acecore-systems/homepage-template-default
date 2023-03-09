@@ -1,9 +1,15 @@
 <template>
   <NuxtLink v-if="article" class="text-decoration-none" :to="`/blog/article/${article.slug}`">
-    <div class="row">
+    <div class="row border-bottom-solid">
       <div class="col-6">
         <template v-if="article.coverImage">
-          <img :src="article.coverImage.src" class="samenaleimg w-110 h-70 my-5 rounded" alt="" width="300" height="200"/>
+          <img 
+            :src="article.coverImage.src" 
+            class="rounded my-5 object-fit-cover"
+            alt="" 
+            width="300" 
+            height="200"
+          />
         </template>
         <template v-else>
           <svg
@@ -44,7 +50,7 @@
                   height="20px"
                   viewBox="0 0 24 24"
                   fill="#CCCCCC"
-                  class="rounded-circle"
+                  class="rounded-circle bg-light"
                 >
                   <path d="M0 0h24v24H0V0z" fill="none" />
                   <path
@@ -88,17 +94,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.samenaleimg {
-  object-fit: cover;
-}
-.col-6 {
-}
-.row {
-  border-bottom: 1px solid #ccc;
-}
-svg {
-  background: rgb(243, 243, 243);
-}
-</style>
