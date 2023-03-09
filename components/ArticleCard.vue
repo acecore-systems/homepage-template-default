@@ -20,7 +20,7 @@
           </svg>
         </template>
       </div>
-      <div class="col-6">
+      <div class="col-6 m-auto">
         <div class="card-body link-secondary">
           <h4 class="card-title link-dark">{{ article.title }}</h4>
           <ul class="card-text p-0 text-secondary">
@@ -94,9 +94,6 @@ export default {
   object-fit: cover;
 }
 .col-6 {
-  margin-top: 50px;
-  margin: auto;
-  border-bottom: none;
 }
 .row {
   border-bottom: 1px solid #ccc;
