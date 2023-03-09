@@ -9,7 +9,7 @@
       <Side :tags="popularTags" :authors="authors" :archives="archives" class="col-4" />
     </div>
   </div>
-</div></template>
+</template>
 
 <script>
 import { mapGetters } from 'vuex'
