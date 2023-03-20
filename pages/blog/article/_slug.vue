@@ -1,11 +1,12 @@
 <template>
   <main class="container p-lg-5 p-2">
     <article v-if="currentArticle">
-      <img :src="currentArticle.coverImage.src" alt="" class="
-        rounded-3
-        w-100
-        object-fit-lg-cover
-      "/>
+      <img 
+        :src="currentArticle.coverImage.src" 
+        alt="" 
+        class="rounded-3 w-100 object-fit-cover"
+        style="height: 300px"
+      />
       <h2 class="mb-3">{{ currentArticle.title }}</h2>
       <ul class="mb-3 list-unstyled">
         <li v-for="tag in currentArticle.tags" :key="tag._id" class="border border-secondary btn btn-sm">
@@ -19,8 +20,8 @@
               <div class="col-2 d-flex align-items-end">
             <a href="#">
               <template v-if="
-                currentArticle.author && currentArticle.author.profileImage
-              ">
+            currentArticle.author && currentArticle.author.profileImage"
+              >
                 <img :src="currentArticle.author.profileImage.src" alt="" width="32" height="32" />
               </template>
               <template v-else>
@@ -36,12 +37,12 @@
           <div class="col-10">
             <div class="row">
               <NuxtLink :to="`/blog/author/${currentArticle.author.slug}`"
-                class="Article_AuthorName text-dark text-nowrap">{{ authorName }}</NuxtLink>
+                class="Article_AuthorName text-dark text-nowrap text-decoretion-none">{{ authorName }}</NuxtLink>
             </div>
             <div class="row">
-              <time :datetime="publishDateForAttr" class="Article_Date text-secondary text-nowrap">{{
-                publishDate
-              }}</time>
+              <time 
+                :datetime="publishDateForAttr" 
+                class="Article_Date text-secondary text-nowrap">{{publishDate}}</time>
               </div>
             </div>
             </div>
@@ -296,8 +297,3 @@ export default {
   },
 }
 </script>
-<style scoped>
-a {
-  text-decoration: none;
-}
-</style>
