@@ -1,8 +1,13 @@
 <template>
-  <nav class="Pagination">
-    <ul class="Pagination_Items">
+  <nav class="p-5">
+    <ul
+      class="px-0 list-unstyled fs-0.5 bg-secondary border rounded d-inline-block position-absolute start-50">
       <li v-for="page in pages" :key="page.number" class="Pagination_Item">
-        <NuxtLink type="button" :to="`${basePath}/page/${page.number}`" :class="`Pagination_Button ${page.isCurrent ? '_current' : ''}`">{{page.number}}</NuxtLink>
+        <NuxtLink
+          type="button" 
+          :to="`${basePath}/page/${page.number}`"
+          :class="`text-decoration-none btn btn-secondary ${page.isCurrent ? '_current' : ''}`"
+        >{{ page.number }}</NuxtLink>
       </li>
     </ul>
   </nav>
