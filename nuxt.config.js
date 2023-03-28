@@ -4,7 +4,7 @@ export default {
   publicRuntimeConfig: {
     spaceUid: 'hatt',
     appUid: 'homepage',
-    token: 'cXUCzvWcO8gjxcRtaJksEukjmZTPDyKWXAZgBLfzBoI',
+    token: process.env.TOKEN,
     apiType: 'cdn',
     linkModelUid: 'link',
     pageModelUid: 'single-page',
