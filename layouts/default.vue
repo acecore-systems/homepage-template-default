@@ -29,4 +29,9 @@ html, body, header,.full-size-background {
   margin-bottom: 15%;
   background-color: rgba(255, 255, 255, 0.9);
 }
+@media screen and (max-width: 480px) {
+  .x-margin{
+    margin:0 5vw;
+  }
+}
 </style>
