@@ -2,8 +2,8 @@
   <main class="container p-lg-5 p-2">
     <article v-if="currentArticle">
       <img :src="currentArticle.coverImage.src" alt="" class="rounded-3 w-100 object-fit-cover" style="height: 300px" />
-      <h2 class="mb-3">{{ currentArticle.title }}</h2>
-      <ul class="mb-3 list-unstyled">
+      <h2 class="py-3">{{ currentArticle.title }}</h2>
+      <ul class="py-3 list-unstyled">
         <li v-for="tag in currentArticle.tags" :key="tag._id" class="border border-secondary btn btn-sm">
           <NuxtLink :to="`/blog/tag/${tag.slug}`" class="text-dark text-decoration-none">#{{ tag.name }}</NuxtLink>
         </li>
@@ -31,7 +31,7 @@
               <div class="col-10">
                 <div class="row">
                   <NuxtLink :to="`/blog/author/${currentArticle.author.slug}`"
-                    class="Article_AuthorName text-dark text-nowrap text-decoretion-none">{{ authorName }}</NuxtLink>
+                    class="Article_AuthorName text-dark text-nowrap text-decoration-none">{{ authorName }}</NuxtLink>
                 </div>
                 <div class="row">
                   <time :datetime="publishDateForAttr"
