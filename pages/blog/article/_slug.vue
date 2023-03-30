@@ -102,7 +102,7 @@
           </div>
           <div class="col-10">
             <div class="card-body">
-              <a class="card-title text-dark text-decoration-none">
+              <a class="card-title text-dark text-decoration-none" style="display: inline-block">
                 {{ authorName }}
               </a>
               <a class="card-text text-dark text-decoration-none">
