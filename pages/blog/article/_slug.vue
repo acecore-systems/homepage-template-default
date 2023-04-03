@@ -85,15 +85,15 @@
       </div>
 
 
-      <NuxtLink :to="`/blog/author/${currentArticle.author.slug}`" class="card mb-5">
+      <NuxtLink :to="`/blog/author/${currentArticle.author.slug}`" class="card mb-5 text-decoration-none">
         <div class="row d-flex align-items-center">
           <div class="col-2 text-center">
             <template v-if="currentArticle.author && currentArticle.author.profileImage">
               <img :src="currentArticle.author.profileImage.src" alt="" width="48" height="48" />
             </template>
             <template v-else>
-              <svg xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" viewBox="0 0 24 24" fill="#CCCCCC"
-                class="border-3 rounded-5 bg-secondary bg-opacity-10">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#CCCCCC"
+                class="border-3 rounded-5 bg-secondary bg-opacity-10 w-50 h-50">
                 <path d="M0 0h24v24H0V0z" fill="none" />
                 <path
                   d="M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 10c2.7 0 5.8 1.29 6 2H6c.23-.72 3.31-2 6-2m0-12C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
@@ -102,14 +102,14 @@
           </div>
           <div class="col-10">
             <div class="card-body">
-              <a class="card-title text-dark text-decoration-none" style="display: inline-block">
+              <div class="card-title text-dark fs-5">
                 {{ authorName }}
-              </a>
-              <a class="card-text text-dark text-decoration-none">
+              </div>
+              <div class="card-text text-dark text-decoration-none">
                 <!-- eslint-disable vue/no-v-html -->
-                <a class="Author_Description text-dark text-decoration-none" v-html="authorBio"></a>
+                <div class="text-dark" v-html="authorBio"></div>
                 <!-- eslint-enable vue/no-v-html -->
-              </a>
+              </div>
             </div>
           </div>
         </div>
