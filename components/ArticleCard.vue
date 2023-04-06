@@ -1,11 +1,11 @@
 <template>
   <NuxtLink v-if="article" class="text-decoration-none" :to="`/blog/article/${article.slug}`">
-    <div class="row border-bottom-solid">
+    <div class="row border-bottom-solid my-5">
       <div class="col-6">
         <template v-if="article.coverImage">
           <img 
             :src="article.coverImage.src" 
-            class="rounded my-5 object-fit-cover"
+            class="rounded object-fit-cover"
             alt="" 
             width="100%" 
             height="200"
