@@ -7,7 +7,7 @@
             :src="article.coverImage.src" 
             class="rounded my-5 object-fit-cover"
             alt="" 
-            width="300" 
+            width="100%" 
             height="200"
           />
         </template>
