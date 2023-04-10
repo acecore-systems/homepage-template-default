@@ -290,3 +290,17 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+  .mb-5>>> h1 {
+    border-top: 3px solid #333;
+    border-bottom: 3px solid #333;
+    padding: 5px;
+  }
+  .mb-5>>> h2 {
+    border-bottom: 6px double #333;
+  }
+  .mb-5>>> h3 {
+    border-bottom: 2px solid #333;
+  }
+</style>
