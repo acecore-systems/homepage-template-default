@@ -296,11 +296,14 @@ export default {
     border-top: 3px solid #333;
     border-bottom: 3px solid #333;
     padding: 5px;
+    margin: 1.5em 0 0.5em 0;
   }
   .mb-5>>> h2 {
     border-bottom: 6px double #333;
+    margin: 0.8em 0 0.6em 0;
   }
   .mb-5>>> h3 {
     border-bottom: 2px solid #333;
+    margin: 0.6em 0 0.4em 0;
   }
 </style>
