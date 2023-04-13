@@ -1,5 +1,5 @@
 {
-  "name": "hatt-homepage",
+  "name": "homepage-template-default",
   "version": "1.0.0",
   "private": false,
   "scripts": {
@@ -16,6 +16,7 @@
     "bootstrap-icons": "^1.9.1",
     "bootstrap-vue": "^2.23.1",
     "core-js": "^3.15.1",
+    "dotenv": "^16.0.3",
     "html-to-text": "^8.1.0",
     "luxon": "^2.5.2",
     "newt-client-js": "^3.1.0",

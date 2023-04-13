@@ -2,9 +2,9 @@ import { resolve } from 'path'
 
 export default {
   publicRuntimeConfig: {
-    spaceUid: 'hatt',
-    appUid: 'homepage',
-    token: 'cXUCzvWcO8gjxcRtaJksEukjmZTPDyKWXAZgBLfzBoI',
+    spaceUid: process.env.SPACE_UID,
+    appUid: process.env.APP_UID,
+    token: process.env.TOKEN,
     apiType: 'cdn',
     linkModelUid: 'link',
     pageModelUid: 'single-page',
@@ -18,7 +18,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'hatt-homepage',
+    title: 'homepage-template-default',
     htmlAttrs: {
       lang: 'ja',
     },
