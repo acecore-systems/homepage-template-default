@@ -1,9 +1,15 @@
 <template>
-  <NuxtLink v-if="article" class="card mb-3" :to="`/blog/article/${article.slug}`">
-    <div class="row">
-      <div class="col-5">
+  <NuxtLink v-if="article" class="text-decoration-none" :to="`/blog/article/${article.slug}`">
+    <div class="row border-bottom-solid my-5">
+      <div class="col-6">
         <template v-if="article.coverImage">
-          <img :src="article.coverImage.src" alt="" width="300" height="200"/>
+          <img 
+            :src="article.coverImage.src" 
+            class="rounded object-fit-cover"
+            alt="" 
+            width="100%" 
+            height="200"
+          />
         </template>
         <template v-else>
           <svg
@@ -20,14 +26,14 @@
           </svg>
         </template>
       </div>
-      <div class="col-7">
-        <div class="card-body">
-          <h3 class="card-title">{{ article.title }}</h3>
-          <ul class="card-text">
-            <li v-for="tag in article.tags" :key="tag._id">#{{ tag.name }}</li>
+      <div class="col-6 m-auto">
+        <div class="card-body link-secondary">
+          <h4 class="card-title link-dark">{{ article.title }}</h4>
+          <ul class="card-text p-0 text-secondary">
+            <li v-for="tag in article.tags" :key="tag._id" class ="p-1 bg-light border d-inline-block rounded list-group-none">#{{ tag.name }}</li>
           </ul>
-          <div class="row">
-            <div class="col-2">
+          <div class="row-two">
+            <div class="col-2 p-0">
               <template v-if="article.author && article.author.profileImage">
               <img
                 :src="article.author.profileImage.src"
@@ -44,6 +50,7 @@
                   height="20px"
                   viewBox="0 0 24 24"
                   fill="#CCCCCC"
+                  class="rounded-circle bg-light"
                 >
                   <path d="M0 0h24v24H0V0z" fill="none" />
                   <path
@@ -53,11 +60,8 @@
               </div>
             </template>
             </div>
-            <div class="col-10">
-              <div class="row">
                 {{ authorName }}
               </div>
-              <div class="row">
                 <time
                   :datetime="formatDate(article._sys.createdAt).replace(/\//gm, '-')"
                   >{{ formatDate(article._sys.createdAt) }}</time
@@ -65,9 +69,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
   </NuxtLink>
 </template>
 
