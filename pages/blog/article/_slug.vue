@@ -293,8 +293,9 @@ export default {
 
 <style scoped>
   .mb-5>>> h1 {
-    border-top: 3px solid #333;
-    border-bottom: 3px solid #333;
+    border-style: solid;
+    border-width: 3px 0;
+    border-color: #333;
     padding: 5px;
     margin: 1.5em 0 0.5em 0;
   }
