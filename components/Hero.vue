@@ -23,8 +23,8 @@
         >
         </div>
       </div>
-      <div v-if="data.backgroundImage" class="col-6">
-        <img :src="data.backgroundImage.src" class="img-fluid" alt="" />
+      <div v-if="data.backgroundImage" class="col-lg-6">
+        <img :src="data.backgroundImage.src" class="img-fluid rounded-top-4 w-100 h-auto mt-5" alt="" />
       </div>
     </div>
   </section>
