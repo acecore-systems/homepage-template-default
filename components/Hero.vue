@@ -1,7 +1,7 @@
 <template>
   <section class="container mb-5">
     <div class="row">
-      <div class="col-6 d-flex align-items-center">
+      <div class="col-6 d-flex align-items-center p-4">
         <div>
           <p
           v-if="data.shoulderCopy"
