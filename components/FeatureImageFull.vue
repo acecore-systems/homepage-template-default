@@ -9,10 +9,9 @@
     <img
       v-if="data.image && data.image.src"
       :src="data.image.src"
-      width="980"
       height="307"
       alt=""
-      class="Feature1_Image"
+      class="Feature1_Image d-block mx-auto object-fit-cover w-75"
     />
   </section>
 </template>
