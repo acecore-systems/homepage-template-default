@@ -1,17 +1,18 @@
 <template>
-  <section class="Feature2">
-    <div class="Feature2_Inner">
-      <div class="Feature2_Data">
+  <section class="my-5">
+    <div class="row">
+    <div class="d-flex bd-highlight">
+      <div class="col-6 bd-highlight">
         <h3
           v-if="data.titleCopy"
-          class="Feature2_Title"
           v-html="data.titleCopy"
         ></h3>
-        <p v-if="data.text" class="Feature2_Text" v-html="data.text"></p>
+        <p v-if="data.text" v-html="data.text"></p>
+      </div>   
+      <div v-if="data.image && data.image.src" class="col-6 bd-highlight">
+        <img :src="data.image.src" alt="" class="img-fluid w-100"/>
       </div>
-      <div v-if="data.image && data.image.src" class="Feature2_Image">
-        <img :src="data.image.src" width="407" height="248" alt="" />
-      </div>
+    </div>
     </div>
   </section>
 </template>
