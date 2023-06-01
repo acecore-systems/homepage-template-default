@@ -12,7 +12,11 @@
         </div>
       </div>
       <div v-if="data.backgroundImage" class="col-lg-6 p-0">
-        <img :src="data.backgroundImage.src" class="img-fluid rounded-4 w-100 h-auto" alt="" />
+        <img 
+          :src="data.backgroundImage.src" 
+          class="img-fluid rounded-4 w-100 h-auto" 
+          alt="" 
+        />
       </div>
   </section>
 </template>
