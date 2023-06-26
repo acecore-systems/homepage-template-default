@@ -17,12 +17,15 @@ export default {
 </script>
 
 <style scoped>
-html, body, header,.full-size-background {
+html,body, header,.full-size-background {
   height: 100%;
 }
 .full-size-background {
+  margin: 0%;
   background-size: cover;
-
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
 }
 .x-margin {
   margin: 0 15%;

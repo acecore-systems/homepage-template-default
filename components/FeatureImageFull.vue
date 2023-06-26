@@ -28,3 +28,12 @@ export default {
   },
 }
 </script>
+
+<style>
+.Feature1{
+  overflow: hidden;
+}
+.Feature1_Image{
+  width: auto;
+}
+</style>
